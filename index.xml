@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Joan — Projects —</title>
+    <link>https://joan-projects.github.io/</link>
+    <description>Recent content on Joan — Projects —</description>
+    <generator>Hugo -- 0.152.0</generator>
+    <language>es-es</language>
+    <lastBuildDate>Wed, 22 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://joan-projects.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Aprendizaje automático en Tetris – Parte 1</title>
+      <link>https://joan-projects.github.io/posts/tetris1/</link>
+      <pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://joan-projects.github.io/posts/tetris1/</guid>
+      <description>&lt;h2 id=&#34;introducción&#34;&gt;Introducción&lt;/h2&gt;
+&lt;p&gt;Comienza aquí una serie de artículos donde te contaré mi viaje para desarrollar una inteligencia artificial capaz de jugar Tetris al máximo nivel, en tiempo real, dentro del entorno tetr.io — El mismo donde compiten hoy los jugadores profesionales.&lt;br&gt;
+A lo largo de esta serie compartiré y describiré los hitos conseguidos hasta la publicación del repositorio final con la IA totalmente entrenada.&lt;/p&gt;
+&lt;h2 id=&#34;tetris-el-juego-sencillo-que-desafía-al-aprendizaje-automático&#34;&gt;Tetris: el juego sencillo que desafía al aprendizaje automático&lt;/h2&gt;
+&lt;p&gt;En la historia del aprendizaje automático, hay momentos canónicos que son legendarios: AlphaGo y AlphaZero alcanzaron un rendimiento sobrehumano en Go y Ajedrez, demostrando que una inteligencia artificial puede aprender por sí sola, simplemente jugando contra sí misma, sin ninguna ayuda humana, hasta superar a los mejores jugadores del mundo en juegos donde la estrategia lo es todo.&lt;br&gt;
+Pero hay un juego que, aunque parece más simple, es un reto todavía mayor para una IA: Tetris.&lt;br&gt;
+Sí, ese juego de piezas que caen sin descanso puede ser un auténtico infierno para los sistemas de aprendizaje automático cuando se intenta alcanzar un nivel comparable —o superior— al de un jugador experimentado, y mucho más aún al de un profesional.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Escríbeme</title>
+      <link>https://joan-projects.github.io/contacto/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://joan-projects.github.io/contacto/</guid>
+      <description>&lt;style&gt;
+  .contact-wrap{max-width:760px;margin:0 auto 2rem;padding:1rem}
+  .contact-title{margin:.5rem 0 1rem;font-weight:700}
+  .contact-form{display:grid;gap:1rem}
+  .contact-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+  @media (min-width:700px){.contact-grid{grid-template-columns:1fr 1fr}.contact-grid .full{grid-column:1/-1}}
+  .contact-form label{display:block;margin:0 0 .35rem;font-weight:600;color:var(--primary)}
+  .contact-form input,.contact-form textarea{
+    width:100%;padding:.75rem 1rem;border:1px solid var(--border);
+    border-radius:.5rem;background:var(--entry);color:var(--content)
+  }
+  .contact-form input::placeholder,.contact-form textarea::placeholder{color:var(--secondary)}
+  .contact-form input:focus,.contact-form textarea:focus{
+    outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(125,125,255,.15)
+  }
+  .contact-btn{
+    appearance:none;border:1px solid var(--border);background:var(--entry);
+    color:var(--primary);padding:.75rem 1.25rem;border-radius:.6rem;cursor:pointer
+  }
+  .contact-btn:hover{filter:brightness(1.05)}
+  #form-status{margin-top:.5rem;color:var(--secondary)}
+&lt;/style&gt;
+
+&lt;div class=&#34;contact-wrap&#34;&gt;  
+  &lt;form id=&#34;contact-form&#34; class=&#34;contact-form&#34; action=&#34;https://formspree.io/f/xjkaqeop&#34; method=&#34;POST&#34;&gt;
+    &lt;div class=&#34;contact-grid&#34;&gt;
+      &lt;div&gt;
+        &lt;label for=&#34;name&#34;&gt;Nombre&lt;/label&gt;
+        &lt;input id=&#34;name&#34; name=&#34;name&#34; type=&#34;text&#34; placeholder=&#34;Tu nombre&#34; required autocomplete=&#34;name&#34;&gt;
+      &lt;/div&gt;
+
+      &lt;div&gt;
+        &lt;label for=&#34;email&#34;&gt;Email&lt;/label&gt;
+        &lt;input id=&#34;email&#34; name=&#34;email&#34; type=&#34;email&#34; placeholder=&#34;tucorreo@ejemplo.com&#34; required autocomplete=&#34;email&#34; inputmode=&#34;email&#34;&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&#34;full&#34;&gt;
+        &lt;label for=&#34;message&#34;&gt;Mensaje&lt;/label&gt;
+        &lt;textarea id=&#34;message&#34; name=&#34;message&#34; rows=&#34;6&#34; placeholder=&#34;¿En qué puedo ayudarte?&#34; required&gt;&lt;/textarea&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Honeypot anti-spam (oculto) --&gt;
+      &lt;input type=&#34;text&#34; name=&#34;website&#34; autocomplete=&#34;off&#34; style=&#34;display:none&#34; tabindex=&#34;-1&#34; aria-hidden=&#34;true&#34;&gt;
+
+      &lt;div class=&#34;full&#34;&gt;
+        &lt;button class=&#34;contact-btn&#34; type=&#34;submit&#34;&gt;Enviar&lt;/button&gt;
+        &lt;p id=&#34;form-status&#34; aria-live=&#34;polite&#34;&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  (function(){
+    var form = document.getElementById(&#39;contact-form&#39;);
+    var status = document.getElementById(&#39;form-status&#39;);
+    if(!form) return;
+
+    form.addEventListener(&#39;submit&#39;, function(e){
+      e.preventDefault();
+      status.textContent = &#39;Enviando…&#39;;
+      var data = new FormData(form);
+      if (data.get(&#39;website&#39;)) { status.textContent = &#39;Error de validación.&#39;; return; }
+      fetch(form.action, { method:&#39;POST&#39;, headers:{&#39;Accept&#39;:&#39;application/json&#39;}, body:data })
+        .then(function(res){
+          if (res.ok) { form.reset(); status.textContent = &#39;¡Mensaje enviado!&#39;; }
+          else { status.textContent = &#39;No se pudo enviar. Intenta de nuevo.&#39;; }
+        })
+        .catch(function(){ status.textContent = &#39;Error de red. Revisa tu conexión.&#39;; });
+    });
+  })();
+&lt;/script&gt;</description>
+    </item>
+  </channel>
+</rss>

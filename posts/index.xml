@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on Joan — Projects —</title>
+    <link>https://joan-projects.github.io/posts/</link>
+    <description>Recent content in Posts on Joan — Projects —</description>
+    <generator>Hugo -- 0.152.0</generator>
+    <language>es-es</language>
+    <lastBuildDate>Wed, 22 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://joan-projects.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Aprendizaje automático en Tetris – Parte 1</title>
+      <link>https://joan-projects.github.io/posts/tetris1/</link>
+      <pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://joan-projects.github.io/posts/tetris1/</guid>
+      <description>&lt;h2 id=&#34;introducción&#34;&gt;Introducción&lt;/h2&gt;
+&lt;p&gt;Comienza aquí una serie de artículos donde te contaré mi viaje para desarrollar una inteligencia artificial capaz de jugar Tetris al máximo nivel, en tiempo real, dentro del entorno tetr.io — El mismo donde compiten hoy los jugadores profesionales.&lt;br&gt;
+A lo largo de esta serie compartiré y describiré los hitos conseguidos hasta la publicación del repositorio final con la IA totalmente entrenada.&lt;/p&gt;
+&lt;h2 id=&#34;tetris-el-juego-sencillo-que-desafía-al-aprendizaje-automático&#34;&gt;Tetris: el juego sencillo que desafía al aprendizaje automático&lt;/h2&gt;
+&lt;p&gt;En la historia del aprendizaje automático, hay momentos canónicos que son legendarios: AlphaGo y AlphaZero alcanzaron un rendimiento sobrehumano en Go y Ajedrez, demostrando que una inteligencia artificial puede aprender por sí sola, simplemente jugando contra sí misma, sin ninguna ayuda humana, hasta superar a los mejores jugadores del mundo en juegos donde la estrategia lo es todo.&lt;br&gt;
+Pero hay un juego que, aunque parece más simple, es un reto todavía mayor para una IA: Tetris.&lt;br&gt;
+Sí, ese juego de piezas que caen sin descanso puede ser un auténtico infierno para los sistemas de aprendizaje automático cuando se intenta alcanzar un nivel comparable —o superior— al de un jugador experimentado, y mucho más aún al de un profesional.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

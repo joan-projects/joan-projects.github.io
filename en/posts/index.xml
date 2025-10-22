@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on Joan Projects</title>
+    <link>https://joan-projects.github.io/en/posts/</link>
+    <description>Recent content in Posts on Joan Projects</description>
+    <generator>Hugo -- 0.152.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://joan-projects.github.io/en/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Machine Learning in Tetris – Part 1</title>
+      <link>https://joan-projects.github.io/en/posts/tetris1/</link>
+      <pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://joan-projects.github.io/en/posts/tetris1/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Here begins a series of articles where I’ll tell you about my journey to develop an artificial intelligence capable of playing Tetris at the highest level, in real time, within the tetr.io environment — the same one where professional players compete today.&lt;br&gt;
+Throughout this series I’ll share and describe the milestones achieved up to the publication of the final repository with the fully trained AI.&lt;/p&gt;
+&lt;h2 id=&#34;tetris-the-simple-game-that-challenges-machine-learning&#34;&gt;Tetris: the simple game that challenges machine learning&lt;/h2&gt;
+&lt;p&gt;In the history of machine learning, there are canonical, legendary moments: AlphaGo and AlphaZero achieved superhuman performance in Go and Chess, proving that an artificial intelligence can learn by itself—simply by playing against itself, without any human help—until it surpasses the world’s best players in games where strategy is everything.&lt;br&gt;
+But there is one game that, although it seems simpler, poses an even greater challenge for an AI: Tetris.&lt;br&gt;
+Yes, that game of relentlessly falling pieces can be a true nightmare for machine learning systems when trying to reach a level comparable to—or higher than—an experienced player’s, and even more so a professional’s.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
