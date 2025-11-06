@@ -1,25 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Posts on Joan Projects</title>
-    <link>https://joan-projects.github.io/en/posts/</link>
-    <description>Recent content in Posts on Joan Projects</description>
-    <generator>Hugo -- 0.152.0</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 22 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://joan-projects.github.io/en/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Machine Learning in Tetris – Part 1</title>
-      <link>https://joan-projects.github.io/en/posts/tetris1/</link>
-      <pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://joan-projects.github.io/en/posts/tetris1/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on Joan Projects</title><link>https://joan-projects.github.io/en/posts/</link><description>Recent content in Posts on Joan Projects</description><generator>Hugo -- 0.152.0</generator><language>en-us</language><lastBuildDate>Wed, 05 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://joan-projects.github.io/en/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Reinforcement Learning in Tetris – Part 2</title><link>https://joan-projects.github.io/en/posts/tetris2/</link><pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate><guid>https://joan-projects.github.io/en/posts/tetris2/</guid><description>&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;In this second installment I’m going to explain how I tackled the challenge of training a Reinforcement Learning agent for Tetris, taking into account the difficulties I mentioned in the previous article.&lt;br&gt;
+The main goal is to reach a superhuman level—not in the sense that the agent plays faster or with greater precision than a person (that, after all, is expected from a machine), but because it becomes a better strategist. In fact, our agent will play at a speed similar to that of a strong human (fewer than 2.5 pieces per second), and I’ll even force it to make mistakes from time to time (5% probability of making an error).&lt;br&gt;
+I’ll tell you about the first approaches that yielded good results and served as the foundation for the ones that followed, which I’ll omit here to avoid making the article too long or overly technical or mathematical.&lt;br&gt;
+I imagine the first thing you did was hit play and notice the surprising level achieved. It’s remarkable and quite a milestone for reinforcement learning. I managed to get an AI to learn effective strategies by itself, without receiving any advice; as you can see, it plans, can anticipate future situations without knowing the next pieces, performs combos, and doesn’t chase immediate reward.&lt;br&gt;
+So if the video already piqued your curiosity, I invite you to keep reading. Let’s go!&lt;/p&gt;</description></item><item><title>Machine Learning in Tetris – Part 1</title><link>https://joan-projects.github.io/en/posts/tetris1/</link><pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate><guid>https://joan-projects.github.io/en/posts/tetris1/</guid><description>&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Here begins a series of articles where I’ll tell you about my journey to develop an artificial intelligence capable of playing Tetris at the highest level, in real time, within the tetr.io environment — the same one where professional players compete today.&lt;br&gt;
 Throughout this series I’ll share and describe the milestones achieved up to the publication of the final repository with the fully trained AI.&lt;/p&gt;
-&lt;h2 id=&#34;tetris-the-simple-game-that-challenges-machine-learning&#34;&gt;Tetris: the simple game that challenges machine learning&lt;/h2&gt;
-&lt;p&gt;In the history of machine learning, there are canonical, legendary moments: AlphaGo and AlphaZero achieved superhuman performance in Go and Chess, proving that an artificial intelligence can learn by itself—simply by playing against itself, without any human help—until it surpasses the world’s best players in games where strategy is everything.&lt;br&gt;
-But there is one game that, although it seems simpler, poses an even greater challenge for an AI: Tetris.&lt;br&gt;
-Yes, that game of relentlessly falling pieces can be a true nightmare for machine learning systems when trying to reach a level comparable to—or higher than—an experienced player’s, and even more so a professional’s.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;p&gt;&lt;strong&gt;Explanatory note:&lt;/strong&gt;&lt;br&gt;
+In this document I use the term &lt;strong&gt;&amp;ldquo;machine learning&amp;rdquo;&lt;/strong&gt; to make it easier for non-technical readers to understand.&lt;br&gt;
+However, it is important to note that the techniques described correspond specifically to &lt;strong&gt;reinforcement learning methods&lt;/strong&gt;.&lt;br&gt;
+The reason for this terminological choice is that the concept of &lt;em&gt;machine learning&lt;/em&gt; more intuitively conveys the idea that the training process is carried out &lt;strong&gt;without direct human intervention&lt;/strong&gt;, that is, without providing explicit instructions or steering the strategy the system should learn.&lt;br&gt;
+In other words, although the general term is &amp;ldquo;machine learning,&amp;rdquo; the actual approach is based on &lt;strong&gt;agents that learn on their own through interaction with their environment&lt;/strong&gt;, optimizing their behavior through rewards or penalties.&lt;/p&gt;</description></item></channel></rss>
