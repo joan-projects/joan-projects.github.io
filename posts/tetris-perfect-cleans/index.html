@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="es" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Aprendizaje por refuerzo en Tetris – Parte 3 | Joan — Projects —</title>
 <meta name="keywords" content="">
 <meta name="description" content="Introducción
 Tras compartir el vídeo de demostración anterior, varios lectores me hicieron una observación muy razonable: si no eres un jugador habitual de Tetris, es difícil apreciar realmente la maestría de la IA. Muchas de las decisiones brillantes que toma pasan desapercibidas simplemente porque el espectador no está familiarizado con el sistema de puntuación ni con las dinámicas competitivas del juego.
 Esto me llevó a replantear el enfoque del proyecto. Antes de mostrar una IA diseñada para derrotar a jugadores humanos enviando grandes cantidades de líneas, quise construir un paso intermedio: una IA que no solo juegue bien, sino que sea inmediatamente impresionante de ver, incluso para alguien que nunca ha jugado una partida competitiva de Tetris.">
 <meta name="author" content="Joan">
-<link rel="canonical" href="http://localhost:1313/posts/tetris-perfect-cleans/">
+<link rel="canonical" href="https://joan-projects.github.io/posts/tetris-perfect-cleans/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="https://joan-projects.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://joan-projects.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://joan-projects.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://joan-projects.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://joan-projects.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="es" href="http://localhost:1313/posts/tetris-perfect-cleans/">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/en/posts/tetris-perfect-cleans/">
+<link rel="alternate" hreflang="es" href="https://joan-projects.github.io/posts/tetris-perfect-cleans/">
+<link rel="alternate" hreflang="en" href="https://joan-projects.github.io/en/posts/tetris-perfect-cleans/">
 <noscript>
     <style>
         #theme-toggle,
@@ -92,7 +92,78 @@ Esto me llevó a replantear el enfoque del proyecto. Antes de mostrar una IA dis
 .list .post-entry .entry-header { order: 0; }
 .list .post-entry .entry-cover  { order: 1; margin-top: .5rem; }
 </style>
+<meta property="og:url" content="https://joan-projects.github.io/posts/tetris-perfect-cleans/">
+  <meta property="og:site_name" content="Joan — Projects —">
+  <meta property="og:title" content="Aprendizaje por refuerzo en Tetris – Parte 3">
+  <meta property="og:description" content="Introducción Tras compartir el vídeo de demostración anterior, varios lectores me hicieron una observación muy razonable: si no eres un jugador habitual de Tetris, es difícil apreciar realmente la maestría de la IA. Muchas de las decisiones brillantes que toma pasan desapercibidas simplemente porque el espectador no está familiarizado con el sistema de puntuación ni con las dinámicas competitivas del juego.
+Esto me llevó a replantear el enfoque del proyecto. Antes de mostrar una IA diseñada para derrotar a jugadores humanos enviando grandes cantidades de líneas, quise construir un paso intermedio: una IA que no solo juegue bien, sino que sea inmediatamente impresionante de ver, incluso para alguien que nunca ha jugado una partida competitiva de Tetris.">
+  <meta property="og:locale" content="es-es">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-01-06T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-01-06T00:00:00+00:00">
+    <meta property="og:image" content="https://joan-projects.github.io/img/TetrisPC.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://joan-projects.github.io/img/TetrisPC.png">
+<meta name="twitter:title" content="Aprendizaje por refuerzo en Tetris – Parte 3">
+<meta name="twitter:description" content="Introducción
+Tras compartir el vídeo de demostración anterior, varios lectores me hicieron una observación muy razonable: si no eres un jugador habitual de Tetris, es difícil apreciar realmente la maestría de la IA. Muchas de las decisiones brillantes que toma pasan desapercibidas simplemente porque el espectador no está familiarizado con el sistema de puntuación ni con las dinámicas competitivas del juego.
+Esto me llevó a replantear el enfoque del proyecto. Antes de mostrar una IA diseñada para derrotar a jugadores humanos enviando grandes cantidades de líneas, quise construir un paso intermedio: una IA que no solo juegue bien, sino que sea inmediatamente impresionante de ver, incluso para alguien que nunca ha jugado una partida competitiva de Tetris.">
 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://joan-projects.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Aprendizaje por refuerzo en Tetris – Parte 3",
+      "item": "https://joan-projects.github.io/posts/tetris-perfect-cleans/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Aprendizaje por refuerzo en Tetris – Parte 3",
+  "name": "Aprendizaje por refuerzo en Tetris – Parte 3",
+  "description": "Introducción Tras compartir el vídeo de demostración anterior, varios lectores me hicieron una observación muy razonable: si no eres un jugador habitual de Tetris, es difícil apreciar realmente la maestría de la IA. Muchas de las decisiones brillantes que toma pasan desapercibidas simplemente porque el espectador no está familiarizado con el sistema de puntuación ni con las dinámicas competitivas del juego.\nEsto me llevó a replantear el enfoque del proyecto. Antes de mostrar una IA diseñada para derrotar a jugadores humanos enviando grandes cantidades de líneas, quise construir un paso intermedio: una IA que no solo juegue bien, sino que sea inmediatamente impresionante de ver, incluso para alguien que nunca ha jugado una partida competitiva de Tetris.\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "Introducción Tras compartir el vídeo de demostración anterior, varios lectores me hicieron una observación muy razonable: si no eres un jugador habitual de Tetris, es difícil apreciar realmente la maestría de la IA. Muchas de las decisiones brillantes que toma pasan desapercibidas simplemente porque el espectador no está familiarizado con el sistema de puntuación ni con las dinámicas competitivas del juego.\nEsto me llevó a replantear el enfoque del proyecto. Antes de mostrar una IA diseñada para derrotar a jugadores humanos enviando grandes cantidades de líneas, quise construir un paso intermedio: una IA que no solo juegue bien, sino que sea inmediatamente impresionante de ver, incluso para alguien que nunca ha jugado una partida competitiva de Tetris.\nUn poco de contexto El movimiento más espectacular del Tetris, sin duda, es conseguir un perfect clean: eliminar todos los bloques del tablero y dejarlo completamente vacío.\nAunque el objetivo es sencillo de describir, lograrlo no lo es en absoluto. El jugador debe resolver un rompecabezas en cuestión de segundos y, además, hacerlo con información incompleta, ya que normalmente se necesitan más piezas de las que se pueden ver por adelantado.\nEn Tetr.io, este movimiento está especialmente bien recompensado: realizar un perfect clean envía cinco líneas adicionales al oponente, la mayor bonificación que se puede obtener en una sola jugada.\nPrecisamente por tratarse de un puzzle con información incompleta, los jugadores profesionales no improvisan. En su lugar, memorizan guías de movimientos iniciales —conocidas como openers— que maximizan la probabilidad de éxito según las piezas disponibles.\nPor ejemplo, si es posible mantener la pieza I en hold (una condición que no siempre se cumple, pero que puede intuirse observando la bolsa de piezas), el Perfect Clean Opener (PCO) ofrece una probabilidad de éxito del 84,64 %. Si no se dispone de esa pieza en hold, la probabilidad desciende al 61,19 %.\nDe forma similar, en el caso de que se prevea que se puede mantener una pieza T en hold, existe la opción de utilizar el opener Grace System, que eleva la probabilidad de éxito hasta el 88,75 %. Hay muchas más técnicas que podría enumerar, cada una con su propio ratio de éxito, pero con estos ejemplos ya es posible hacerse una idea del problema.\nLa conclusión que debe quedar clara para el lector es la siguiente: con memorización y destreza, un jugador profesional puede alcanzar probabilidades muy altas de realizar un perfect clean, pero nunca tiene una garantía del 100 %.\nTodas estas técnicas comparten una característica fundamental: cuando se ejecutan correctamente, permiten conseguir el perfect clean utilizando exactamente 10 piezas.\nExiste, además, una dificultad añadida, especialmente cuando el objetivo es encadenar tantos perfect cleans como sea posible. Si el jugador intenta uno de estos openers y se encuentra en el caso en que no puede finalizarlo, queda en una posición intermedia. A partir de ahí, entra en juego la creatividad: debe intentar recuperarse para, tras algunas piezas más, poder volver a intentar otro opener.\nDespués de realizar esta investigación previa, ya es posible dimensionar el problema al que se enfrenta el agente de IA. Una vez más, el principal obstáculo es la información incompleta: ante una misma observación, tomando exactamente la misma acción, el agente puede lograr un perfect clean… o puede no hacerlo, dependiendo de las piezas que aparezcan a continuación.\nNueva función de valor En primer lugar, ya no podía confiar en la puntuación tradicional del juego (las líneas enviadas) como función de valor, ya que el objetivo había cambiado: ahora se trataba de conseguir el máximo número de perfect cleans utilizando el menor número posible de piezas. Sin recurrir a una función ad hoc excesivamente instrumental, la idea era que el agente descubriera por sí solo la mejor estrategia para alcanzar ese objetivo.\nPara ello, modifiqué la función de valor de la siguiente manera:\nel agente recibe +1 punto cuando consigue un perfect clean recibe −1 punto si la altura máxima del tablero supera las 5 filas De este modo, el agente tiene incentivos claros para mantener el tablero bajo.\nEn partidas orientadas al envío de líneas, acumular altura puede ser interesante, ya que en determinados momentos eliminar líneas consecutivas genera bonificaciones adicionales. Sin embargo, en este caso el objetivo es muy distinto: queremos maximizar las probabilidades de realizar un perfect clean, y acumular altura nos aleja de esas opciones.\nAdemás, eliminé el factor de descuento durante las primeras cinco piezas colocadas. En ese horizonte, las acciones futuras son completamente deterministas con respecto al entorno, ya que el agente conoce de antemano todas las piezas que van a aparecer en ese tramo. Mientras el orden de piezas visibles esté fijado, no hay aleatoriedad en su aparición y, por tanto, no existe incertidumbre asociada al entorno durante esas primeras acciones.\nEl factor de descuento cumple múltiples funciones en aprendizaje por refuerzo. Entre otras, permite reflejar la incertidumbre ligada a consecuencias futuras, introduce una preferencia por obtener recompensas antes que después y puede ayudar a estabilizar el aprendizaje en horizontes largos. Sin embargo, en este problema concreto, esos efectos no son relevantes durante las primeras cinco piezas.\nPor un lado, no existe incertidumbre: el entorno es completamente predecible en ese tramo. Por otro, el número de piezas hasta un perfect clean no es una variable que el agente pueda “optimizar” libremente en esa ventana. Para vaciar por completo el tablero, necesariamente se deben completar un número entero de filas (anchura 10), lo que equivale a ocupar un múltiplo de 10 celdas (10×1, 10×2, 10×3, 10×4, etc.).\nEn la práctica, el caso más habitual es 10×4 (40 bloques), que corresponde a 10 piezas porque cada tetrominó ocupa 4 bloques; los otros casos existen pero son mucho menos frecuentes y no cambian la idea principal: la recompensa no puede obtenerse antes de haber colocado ese número de piezas, que está prácticamente fijado por la propia definición del perfect clean.\nPor estos motivos, el factor de descuento comienza a aplicarse únicamente a partir de la sexta pieza, cuando el entorno deja de ser determinista y aparece la incertidumbre asociada a las piezas siguientes, utilizando en ese punto un valor de 0,95.\nColección de perfect cleans Como he mencionado anteriormente, la incertidumbre del entorno es el principal factor que dificulta el aprendizaje del agente. Una misma combinación de acciones puede resultar efectiva en algunos casos y fallar en otros, simplemente en función de qué piezas aparezcan en sexta, séptima, octava, novena o décima posición.\nPara facilitar el aprendizaje, cada vez que el agente conseguía un nuevo perfect clean, ese estado se almacenaba. Durante el entrenamiento, el entorno se configuraba con frecuencia en alguno de esos momentos previos al éxito: entre 10 acciones anteriores (dependiendo del número de holds usados) y 5 acciones anteriores al perfect clean.\nEste enfoque permitió observar que, a medida que avanzaba el entrenamiento, el agente descubría múltiples secuencias de acciones distintas capaces de resolver una misma configuración inicial. Dado que la política del agente está parametrizada por una red neuronal cuyo resultado es una distribución de probabilidad sobre las acciones posibles, cada una de estas estrategias competía implícitamente en términos de retorno esperado.\nAl exponer repetidamente al agente a los mismos estados bajo incertidumbre inducida por las piezas futuras, las actualizaciones de aprendizaje tendían a aumentar la probabilidad asignada a aquellas acciones que, en promedio, conducían con mayor frecuencia al perfect clean. Como consecuencia, sin imponer reglas explícitas ni seleccionar trayectorias concretas, la política aprendida evolucionaba progresivamente hacia una estrategia estadísticamente dominante, es decir, aquella más robusta frente a la variabilidad del entorno.\nTodo en conjunto Combinando las técnicas descritas en los capítulos anteriores con las expuestas aquí, se obtuvieron los resultados esperados. El agente es capaz de encadenar perfect cleans a un nivel sobrehumano.\nComo referencia, la partida humana más perfecta registrada consigue, en promedio, un perfect clean cada 11,08 piezas. Mi agente, por su parte, lo logra aproximadamente cada 11,5 piezas.\nEs cierto que el agente necesita algo más de piezas que esa partida humana excepcional, pero la comparación es clave: no se trata de la mejor partida posible del agente, sino de cualquier partida del agente, frente a la mejor partida jamás realizada por un humano.\nLo más difícil todavía Existe una acción aún más espectacular que el perfect clean estándar: el perfect clean finalizado con un Tetris. Además de ser visualmente impresionante, es la jugada que más líneas envía al oponente, ya que combina las 5 líneas del perfect clean con las 4 líneas del Tetris.\nEn este caso, el rompecabezas se vuelve realmente complejo. En la práctica, es como realizar dos perfect cleans consecutivos: el primero con una anchura efectiva de 9 columnas, y el segundo utilizando la pieza I colocada en vertical. Para lograrlo, ya no basta con tener un control total del tablero, como ocurría en el caso anterior; también es necesario controlar con precisión el orden en que se utilizan las piezas, algo que antes no era imprescindible.\nA pesar de que la dificultad aumenta de forma considerable, el único cambio realizado fue en la función de valor, que en este caso otorga recompensa únicamente cuando se consigue un perfect clean finalizado con un Tetris.\nEl agente entrenado juega con el objetivo de encadenar tantos perfect cleans finalizados con un Tetris como sea posible dentro de una misma partida. En este contexto, el resultado observado es que el agente consigue este tipo de jugada con una frecuencia inferior a una cada 40 piezas, es decir, en una partida continua logra, de media, un perfect clean + Tetris cada menos de 40 piezas colocadas.\nDurante el entrenamiento se observó, además, una tendencia clara y sostenida: a medida que el agente aprendía, el número de piezas necesarias entre un perfect clean + Tetris y el siguiente iba disminuyendo progresivamente, sin mostrar signos de estancamiento. El proceso se detuvo únicamente por limitaciones prácticas de tiempo y cómputo, ya que con una única RTX 3090 la velocidad de mejora en esta fase final es relativamente lenta.\nSería interesante comprobar hasta dónde puede llegar este enfoque, y no descarto retomar este entrenamiento en el futuro para averiguarlo.\nVídeo del agente entrenado para realizar perfect cleans finalizados con Tetris\n",
+  "wordCount" : "1691",
+  "inLanguage": "es",
+  "image":"https://joan-projects.github.io/img/TetrisPC.png","datePublished": "2026-01-06T00:00:00Z",
+  "dateModified": "2026-01-06T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Joan"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://joan-projects.github.io/posts/tetris-perfect-cleans/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Joan — Projects —",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://joan-projects.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -110,7 +181,7 @@ Esto me llevó a replantear el enfoque del proyecto. Antes de mostrar una IA dis
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="Joan — Projects — (Alt + H)">Joan — Projects —</a>
+            <a href="https://joan-projects.github.io/" accesskey="h" title="Joan — Projects — (Alt + H)">Joan — Projects —</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -134,7 +205,7 @@ Esto me llevó a replantear el enfoque del proyecto. Antes de mostrar una IA dis
                 </button>
                     <ul class="lang-switch"><li>|</li>
                         <li>
-                            <a href="http://localhost:1313/en/" title="English"
+                            <a href="https://joan-projects.github.io/en/" title="English"
                                 aria-label="English">En</a>
                         </li>
                     </ul>
@@ -142,17 +213,17 @@ Esto me llevó a replantear el enfoque del proyecto. Antes de mostrar una IA dis
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/" title="Inicio">
+                <a href="https://joan-projects.github.io/" title="Inicio">
                     <span>Inicio</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/posts/" title="Artículos">
+                <a href="https://joan-projects.github.io/posts/" title="Artículos">
                     <span>Artículos</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/contacto/" title="Contacto">
+                <a href="https://joan-projects.github.io/contacto/" title="Contacto">
                     <span>Contacto</span>
                 </a>
             </li>
@@ -170,7 +241,7 @@ Esto me llevó a replantear el enfoque del proyecto. Antes de mostrar una IA dis
     <div class="post-meta"><span title='2026-01-06 00:00:00 +0000 UTC'>6 de enero de 2026</span>&nbsp;·&nbsp;<span>8 min</span>&nbsp;·&nbsp;<span>Joan</span>&nbsp;|&nbsp;<span>Traducciones:</span>
 <ul class="i18n_list">
     <li>
-        <a href="http://localhost:1313/en/posts/tetris-perfect-cleans/">En</a>
+        <a href="https://joan-projects.github.io/en/posts/tetris-perfect-cleans/">En</a>
     </li>
 </ul>
 
@@ -186,8 +257,8 @@ Esto me llevó a replantear el enfoque del proyecto. Antes de mostrar una IA dis
         class="vc-video"
         preload="metadata"
         playsinline
-        poster="http://localhost:1313/img/TetrisPC.png"
-        style="width:100%;height:auto;display:block;border-radius:12px;object-fit:cover"><source src="http://localhost:1313/video/PC.mp4" type="video/mp4">Tu navegador no soporta el elemento <code>video</code>.
+        poster="https://joan-projects.github.io/img/TetrisPC.png"
+        style="width:100%;height:auto;display:block;border-radius:12px;object-fit:cover"><source src="https://joan-projects.github.io/video/PC.mp4" type="video/mp4">Tu navegador no soporta el elemento <code>video</code>.
       </video>
 
       
@@ -317,7 +388,7 @@ Esto me llevó a replantear el enfoque del proyecto. Antes de mostrar una IA dis
     <ul class="post-tags">
     </ul>
 <nav class="paginav">
-  <a class="next" href="http://localhost:1313/posts/tetris2/">
+  <a class="next" href="https://joan-projects.github.io/posts/tetris2/">
     <span class="title">Siguiente »</span>
     <br>
     <span>Aprendizaje por refuerzo en Tetris – Parte 2</span>
@@ -328,7 +399,7 @@ Esto me llevó a replantear el enfoque del proyecto. Antes de mostrar una IA dis
 <ul class="share-buttons">
     <li>
         <a target="_blank" rel="noopener noreferrer" aria-label="share Aprendizaje por refuerzo en Tetris – Parte 3 on x"
-            href="https://x.com/intent/tweet/?text=Aprendizaje%20por%20refuerzo%20en%20Tetris%20%e2%80%93%20Parte%203&amp;url=http%3a%2f%2flocalhost%3a1313%2fposts%2ftetris-perfect-cleans%2f&amp;hashtags=">
+            href="https://x.com/intent/tweet/?text=Aprendizaje%20por%20refuerzo%20en%20Tetris%20%e2%80%93%20Parte%203&amp;url=https%3a%2f%2fjoan-projects.github.io%2fposts%2ftetris-perfect-cleans%2f&amp;hashtags=">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
@@ -337,7 +408,7 @@ Esto me llevó a replantear el enfoque del proyecto. Antes de mostrar una IA dis
     </li>
     <li>
         <a target="_blank" rel="noopener noreferrer" aria-label="share Aprendizaje por refuerzo en Tetris – Parte 3 on linkedin"
-            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fposts%2ftetris-perfect-cleans%2f&amp;title=Aprendizaje%20por%20refuerzo%20en%20Tetris%20%e2%80%93%20Parte%203&amp;summary=Aprendizaje%20por%20refuerzo%20en%20Tetris%20%e2%80%93%20Parte%203&amp;source=http%3a%2f%2flocalhost%3a1313%2fposts%2ftetris-perfect-cleans%2f">
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fjoan-projects.github.io%2fposts%2ftetris-perfect-cleans%2f&amp;title=Aprendizaje%20por%20refuerzo%20en%20Tetris%20%e2%80%93%20Parte%203&amp;summary=Aprendizaje%20por%20refuerzo%20en%20Tetris%20%e2%80%93%20Parte%203&amp;source=https%3a%2f%2fjoan-projects.github.io%2fposts%2ftetris-perfect-cleans%2f">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
@@ -346,7 +417,7 @@ Esto me llevó a replantear el enfoque del proyecto. Antes de mostrar una IA dis
     </li>
     <li>
         <a target="_blank" rel="noopener noreferrer" aria-label="share Aprendizaje por refuerzo en Tetris – Parte 3 on reddit"
-            href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2ftetris-perfect-cleans%2f&title=Aprendizaje%20por%20refuerzo%20en%20Tetris%20%e2%80%93%20Parte%203">
+            href="https://reddit.com/submit?url=https%3a%2f%2fjoan-projects.github.io%2fposts%2ftetris-perfect-cleans%2f&title=Aprendizaje%20por%20refuerzo%20en%20Tetris%20%e2%80%93%20Parte%203">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
@@ -355,7 +426,7 @@ Esto me llevó a replantear el enfoque del proyecto. Antes de mostrar una IA dis
     </li>
     <li>
         <a target="_blank" rel="noopener noreferrer" aria-label="share Aprendizaje por refuerzo en Tetris – Parte 3 on facebook"
-            href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fposts%2ftetris-perfect-cleans%2f">
+            href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fjoan-projects.github.io%2fposts%2ftetris-perfect-cleans%2f">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
@@ -364,7 +435,7 @@ Esto me llevó a replantear el enfoque del proyecto. Antes de mostrar una IA dis
     </li>
     <li>
         <a target="_blank" rel="noopener noreferrer" aria-label="share Aprendizaje por refuerzo en Tetris – Parte 3 on whatsapp"
-            href="https://api.whatsapp.com/send?text=Aprendizaje%20por%20refuerzo%20en%20Tetris%20%e2%80%93%20Parte%203%20-%20http%3a%2f%2flocalhost%3a1313%2fposts%2ftetris-perfect-cleans%2f">
+            href="https://api.whatsapp.com/send?text=Aprendizaje%20por%20refuerzo%20en%20Tetris%20%e2%80%93%20Parte%203%20-%20https%3a%2f%2fjoan-projects.github.io%2fposts%2ftetris-perfect-cleans%2f">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
@@ -373,7 +444,7 @@ Esto me llevó a replantear el enfoque del proyecto. Antes de mostrar una IA dis
     </li>
     <li>
         <a target="_blank" rel="noopener noreferrer" aria-label="share Aprendizaje por refuerzo en Tetris – Parte 3 on telegram"
-            href="https://telegram.me/share/url?text=Aprendizaje%20por%20refuerzo%20en%20Tetris%20%e2%80%93%20Parte%203&amp;url=http%3a%2f%2flocalhost%3a1313%2fposts%2ftetris-perfect-cleans%2f">
+            href="https://telegram.me/share/url?text=Aprendizaje%20por%20refuerzo%20en%20Tetris%20%e2%80%93%20Parte%203&amp;url=https%3a%2f%2fjoan-projects.github.io%2fposts%2ftetris-perfect-cleans%2f">
             <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
@@ -382,7 +453,7 @@ Esto me llevó a replantear el enfoque del proyecto. Antes de mostrar una IA dis
     </li>
     <li>
         <a target="_blank" rel="noopener noreferrer" aria-label="share Aprendizaje por refuerzo en Tetris – Parte 3 on ycombinator"
-            href="https://news.ycombinator.com/submitlink?t=Aprendizaje%20por%20refuerzo%20en%20Tetris%20%e2%80%93%20Parte%203&u=http%3a%2f%2flocalhost%3a1313%2fposts%2ftetris-perfect-cleans%2f">
+            href="https://news.ycombinator.com/submitlink?t=Aprendizaje%20por%20refuerzo%20en%20Tetris%20%e2%80%93%20Parte%203&u=https%3a%2f%2fjoan-projects.github.io%2fposts%2ftetris-perfect-cleans%2f">
             <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
                 xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
                 <path
@@ -397,7 +468,7 @@ Esto me llevó a replantear el enfoque del proyecto. Antes de mostrar una IA dis
     </main>
     
 <footer class="footer">
-        <span>&copy; 2026 <a href="http://localhost:1313/">Joan — Projects —</a></span> · 
+        <span>&copy; 2026 <a href="https://joan-projects.github.io/">Joan — Projects —</a></span> · 
 
     <span>
         Powered by

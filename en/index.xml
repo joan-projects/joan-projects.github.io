@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Joan Projects</title>
-    <link>http://localhost:1313/en/</link>
+    <link>https://joan-projects.github.io/en/</link>
     <description>Recent content on Joan Projects</description>
     <generator>Hugo -- 0.152.0</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 06 Jan 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/en/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://joan-projects.github.io/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Reinforcement Learning in Tetris – Part 3</title>
-      <link>http://localhost:1313/en/posts/tetris-perfect-cleans/</link>
+      <link>https://joan-projects.github.io/en/posts/tetris-perfect-cleans/</link>
       <pubDate>Tue, 06 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/posts/tetris-perfect-cleans/</guid>
+      <guid>https://joan-projects.github.io/en/posts/tetris-perfect-cleans/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;After sharing the previous demonstration video, several readers made a very reasonable observation: if you are not a regular Tetris player, it is difficult to truly appreciate the mastery of the AI. Many of the brilliant decisions it makes go unnoticed simply because the viewer is not familiar with the scoring system or with the game’s competitive dynamics.&lt;/p&gt;
 &lt;p&gt;This led me to rethink the project’s approach. Before showcasing an AI designed to defeat human players by sending large amounts of garbage lines, I wanted to build an intermediate step: an AI that not only plays well, but is immediately impressive to watch, even for someone who has never played a competitive game of Tetris.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Reinforcement Learning in Tetris – Part 2</title>
-      <link>http://localhost:1313/en/posts/tetris2/</link>
+      <link>https://joan-projects.github.io/en/posts/tetris2/</link>
       <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/posts/tetris2/</guid>
+      <guid>https://joan-projects.github.io/en/posts/tetris2/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;In this second installment I’m going to explain how I tackled the challenge of training a Reinforcement Learning agent for Tetris, taking into account the difficulties I mentioned in the previous article.&lt;br&gt;
 The main goal is to reach a superhuman level—not in the sense that the agent plays faster or with greater precision than a person (that, after all, is expected from a machine), but because it becomes a better strategist. In fact, our agent will play at a speed similar to that of a strong human (fewer than 2.5 pieces per second), and I’ll even force it to make mistakes from time to time (5% probability of making an error).&lt;br&gt;
@@ -31,9 +31,9 @@ So if the video already piqued your curiosity, I invite you to keep reading. Let
     </item>
     <item>
       <title>Machine Learning in Tetris – Part 1</title>
-      <link>http://localhost:1313/en/posts/tetris1/</link>
+      <link>https://joan-projects.github.io/en/posts/tetris1/</link>
       <pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/posts/tetris1/</guid>
+      <guid>https://joan-projects.github.io/en/posts/tetris1/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Here begins a series of articles where I’ll tell you about my journey to develop an artificial intelligence capable of playing Tetris at the highest level, in real time, within the tetr.io environment — the same one where professional players compete today.&lt;br&gt;
 Throughout this series I’ll share and describe the milestones achieved up to the publication of the final repository with the fully trained AI.&lt;/p&gt;
@@ -45,9 +45,9 @@ In other words, although the general term is &amp;ldquo;machine learning,&amp;rd
     </item>
     <item>
       <title>Contact</title>
-      <link>http://localhost:1313/en/contact/</link>
+      <link>https://joan-projects.github.io/en/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/contact/</guid>
+      <guid>https://joan-projects.github.io/en/contact/</guid>
       <description>&lt;style&gt;
   .contact-wrap{max-width:760px;margin:0 auto 2rem;padding:1rem}
   .contact-title{margin:.5rem 0 1rem;font-weight:700}

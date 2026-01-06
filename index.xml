@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Joan — Projects —</title>
-    <link>http://localhost:1313/</link>
+    <link>https://joan-projects.github.io/</link>
     <description>Recent content on Joan — Projects —</description>
     <generator>Hugo -- 0.152.0</generator>
     <language>es-es</language>
     <lastBuildDate>Tue, 06 Jan 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://joan-projects.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Aprendizaje por refuerzo en Tetris – Parte 3</title>
-      <link>http://localhost:1313/posts/tetris-perfect-cleans/</link>
+      <link>https://joan-projects.github.io/posts/tetris-perfect-cleans/</link>
       <pubDate>Tue, 06 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/tetris-perfect-cleans/</guid>
+      <guid>https://joan-projects.github.io/posts/tetris-perfect-cleans/</guid>
       <description>&lt;h2 id=&#34;introducción&#34;&gt;Introducción&lt;/h2&gt;
 &lt;p&gt;Tras compartir el vídeo de demostración anterior, varios lectores me hicieron una observación muy razonable: si no eres un jugador habitual de &lt;em&gt;Tetris&lt;/em&gt;, es difícil apreciar realmente la maestría de la IA. Muchas de las decisiones brillantes que toma pasan desapercibidas simplemente porque el espectador no está familiarizado con el sistema de puntuación ni con las dinámicas competitivas del juego.&lt;/p&gt;
 &lt;p&gt;Esto me llevó a replantear el enfoque del proyecto. Antes de mostrar una IA diseñada para derrotar a jugadores humanos enviando grandes cantidades de líneas, quise construir un paso intermedio: una IA que no solo juegue bien, sino que sea inmediatamente impresionante de ver, incluso para alguien que nunca ha jugado una partida competitiva de &lt;em&gt;Tetris&lt;/em&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Aprendizaje por refuerzo en Tetris – Parte 2</title>
-      <link>http://localhost:1313/posts/tetris2/</link>
+      <link>https://joan-projects.github.io/posts/tetris2/</link>
       <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/tetris2/</guid>
+      <guid>https://joan-projects.github.io/posts/tetris2/</guid>
       <description>&lt;h2 id=&#34;introducción&#34;&gt;Introducción&lt;/h2&gt;
 &lt;p&gt;En esta segunda entrega te voy a contar cómo abordé el desafío del entrenamiento de un agente de Reinforcement Learning aplicado a Tetris, teniendo en cuenta las dificultades que mencioné en el artículo anterior.&lt;br&gt;
 El objetivo principal es alcanzar un nivel sobrehumano, pero no en el sentido de que el agente juegue más rápido o con mayor precisión que una persona —eso, al fin y al cabo, es lo esperable de una máquina—, sino porque sea mejor estratega. De hecho, nuestro agente jugará a una velocidad similar a la de un jugador bueno (menos de 2.5 piezas por segundo), e incluso le obligaré a cometer errores de vez en cuando (5% de probabilidad de cometer error).&lt;br&gt;
@@ -31,9 +31,9 @@ Así que, si el video ya te dejó con curiosidad, te invito a seguir leyendo. ¡
     </item>
     <item>
       <title>Aprendizaje automático en Tetris – Parte 1</title>
-      <link>http://localhost:1313/posts/tetris1/</link>
+      <link>https://joan-projects.github.io/posts/tetris1/</link>
       <pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/tetris1/</guid>
+      <guid>https://joan-projects.github.io/posts/tetris1/</guid>
       <description>&lt;h2 id=&#34;introducción&#34;&gt;Introducción&lt;/h2&gt;
 &lt;p&gt;Comienza aquí una serie de artículos donde te contaré mi viaje para desarrollar una inteligencia artificial capaz de jugar Tetris al máximo nivel, en tiempo real, dentro del entorno tetr.io — El mismo donde compiten hoy los jugadores profesionales.&lt;br&gt;
 A lo largo de esta serie compartiré y describiré los hitos conseguidos hasta la publicación del repositorio final con la IA totalmente entrenada.&lt;/p&gt;
@@ -45,9 +45,9 @@ En otras palabras, aunque el término general sea &amp;ldquo;aprendizaje automá
     </item>
     <item>
       <title>Escríbeme</title>
-      <link>http://localhost:1313/contacto/</link>
+      <link>https://joan-projects.github.io/contacto/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/contacto/</guid>
+      <guid>https://joan-projects.github.io/contacto/</guid>
       <description>&lt;style&gt;
   .contact-wrap{max-width:760px;margin:0 auto 2rem;padding:1rem}
   .contact-title{margin:.5rem 0 1rem;font-weight:700}

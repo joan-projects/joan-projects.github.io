@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Aprendizaje por refuerzo en Tetris – Parte 2 | Joan — Projects —</title>
 <meta name="keywords" content="">
 <meta name="description" content="Introducción
@@ -14,17 +14,17 @@ Voy a contarte las primeras aproximaciones que dieron buenos resultados y que si
 Imagino que lo primero que habrás hecho ha sido darle al play y comprobado el sorprendente nivel alcanzado. Es sorprendente y todo un logro para el aprendizaje por refuerzo. He conseguido que una IA aprenda estrategias efectivas por sí sola, sin recibir ningún tipo de consejo; como ves, planifica, es capaz de prever situaciones futuras sin conocer las próximas piezas, realiza combos y no se deja llevar por la recompensa inmediata.
 Así que, si el video ya te dejó con curiosidad, te invito a seguir leyendo. ¡Vamos allá!">
 <meta name="author" content="Joan">
-<link rel="canonical" href="http://localhost:1313/posts/tetris2/">
+<link rel="canonical" href="https://joan-projects.github.io/posts/tetris2/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="https://joan-projects.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://joan-projects.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://joan-projects.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://joan-projects.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://joan-projects.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="es" href="http://localhost:1313/posts/tetris2/">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/en/posts/tetris2/">
+<link rel="alternate" hreflang="es" href="https://joan-projects.github.io/posts/tetris2/">
+<link rel="alternate" hreflang="en" href="https://joan-projects.github.io/en/posts/tetris2/">
 <noscript>
     <style>
         #theme-toggle,
@@ -95,7 +95,84 @@ Así que, si el video ya te dejó con curiosidad, te invito a seguir leyendo. ¡
 .list .post-entry .entry-header { order: 0; }
 .list .post-entry .entry-cover  { order: 1; margin-top: .5rem; }
 </style>
+<meta property="og:url" content="https://joan-projects.github.io/posts/tetris2/">
+  <meta property="og:site_name" content="Joan — Projects —">
+  <meta property="og:title" content="Aprendizaje por refuerzo en Tetris – Parte 2">
+  <meta property="og:description" content="Introducción En esta segunda entrega te voy a contar cómo abordé el desafío del entrenamiento de un agente de Reinforcement Learning aplicado a Tetris, teniendo en cuenta las dificultades que mencioné en el artículo anterior.
+El objetivo principal es alcanzar un nivel sobrehumano, pero no en el sentido de que el agente juegue más rápido o con mayor precisión que una persona —eso, al fin y al cabo, es lo esperable de una máquina—, sino porque sea mejor estratega. De hecho, nuestro agente jugará a una velocidad similar a la de un jugador bueno (menos de 2.5 piezas por segundo), e incluso le obligaré a cometer errores de vez en cuando (5% de probabilidad de cometer error).
+Voy a contarte las primeras aproximaciones que dieron buenos resultados y que sirvieron de base para las siguientes, que omitiré aquí para no hacer el artículo demasiado extenso ni excesivamente técnico o matemático.
+Imagino que lo primero que habrás hecho ha sido darle al play y comprobado el sorprendente nivel alcanzado. Es sorprendente y todo un logro para el aprendizaje por refuerzo. He conseguido que una IA aprenda estrategias efectivas por sí sola, sin recibir ningún tipo de consejo; como ves, planifica, es capaz de prever situaciones futuras sin conocer las próximas piezas, realiza combos y no se deja llevar por la recompensa inmediata.
+Así que, si el video ya te dejó con curiosidad, te invito a seguir leyendo. ¡Vamos allá!">
+  <meta property="og:locale" content="es-es">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-11-05T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-11-05T00:00:00+00:00">
+    <meta property="og:image" content="https://joan-projects.github.io/img/Tetris2.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://joan-projects.github.io/img/Tetris2.png">
+<meta name="twitter:title" content="Aprendizaje por refuerzo en Tetris – Parte 2">
+<meta name="twitter:description" content="Introducción
+En esta segunda entrega te voy a contar cómo abordé el desafío del entrenamiento de un agente de Reinforcement Learning aplicado a Tetris, teniendo en cuenta las dificultades que mencioné en el artículo anterior.
+El objetivo principal es alcanzar un nivel sobrehumano, pero no en el sentido de que el agente juegue más rápido o con mayor precisión que una persona —eso, al fin y al cabo, es lo esperable de una máquina—, sino porque sea mejor estratega. De hecho, nuestro agente jugará a una velocidad similar a la de un jugador bueno (menos de 2.5 piezas por segundo), e incluso le obligaré a cometer errores de vez en cuando (5% de probabilidad de cometer error).
+Voy a contarte las primeras aproximaciones que dieron buenos resultados y que sirvieron de base para las siguientes, que omitiré aquí para no hacer el artículo demasiado extenso ni excesivamente técnico o matemático.
+Imagino que lo primero que habrás hecho ha sido darle al play y comprobado el sorprendente nivel alcanzado. Es sorprendente y todo un logro para el aprendizaje por refuerzo. He conseguido que una IA aprenda estrategias efectivas por sí sola, sin recibir ningún tipo de consejo; como ves, planifica, es capaz de prever situaciones futuras sin conocer las próximas piezas, realiza combos y no se deja llevar por la recompensa inmediata.
+Así que, si el video ya te dejó con curiosidad, te invito a seguir leyendo. ¡Vamos allá!">
 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://joan-projects.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Aprendizaje por refuerzo en Tetris – Parte 2",
+      "item": "https://joan-projects.github.io/posts/tetris2/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Aprendizaje por refuerzo en Tetris – Parte 2",
+  "name": "Aprendizaje por refuerzo en Tetris – Parte 2",
+  "description": "Introducción En esta segunda entrega te voy a contar cómo abordé el desafío del entrenamiento de un agente de Reinforcement Learning aplicado a Tetris, teniendo en cuenta las dificultades que mencioné en el artículo anterior.\nEl objetivo principal es alcanzar un nivel sobrehumano, pero no en el sentido de que el agente juegue más rápido o con mayor precisión que una persona —eso, al fin y al cabo, es lo esperable de una máquina—, sino porque sea mejor estratega. De hecho, nuestro agente jugará a una velocidad similar a la de un jugador bueno (menos de 2.5 piezas por segundo), e incluso le obligaré a cometer errores de vez en cuando (5% de probabilidad de cometer error).\nVoy a contarte las primeras aproximaciones que dieron buenos resultados y que sirvieron de base para las siguientes, que omitiré aquí para no hacer el artículo demasiado extenso ni excesivamente técnico o matemático.\nImagino que lo primero que habrás hecho ha sido darle al play y comprobado el sorprendente nivel alcanzado. Es sorprendente y todo un logro para el aprendizaje por refuerzo. He conseguido que una IA aprenda estrategias efectivas por sí sola, sin recibir ningún tipo de consejo; como ves, planifica, es capaz de prever situaciones futuras sin conocer las próximas piezas, realiza combos y no se deja llevar por la recompensa inmediata.\nAsí que, si el video ya te dejó con curiosidad, te invito a seguir leyendo. ¡Vamos allá!\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "Introducción En esta segunda entrega te voy a contar cómo abordé el desafío del entrenamiento de un agente de Reinforcement Learning aplicado a Tetris, teniendo en cuenta las dificultades que mencioné en el artículo anterior.\nEl objetivo principal es alcanzar un nivel sobrehumano, pero no en el sentido de que el agente juegue más rápido o con mayor precisión que una persona —eso, al fin y al cabo, es lo esperable de una máquina—, sino porque sea mejor estratega. De hecho, nuestro agente jugará a una velocidad similar a la de un jugador bueno (menos de 2.5 piezas por segundo), e incluso le obligaré a cometer errores de vez en cuando (5% de probabilidad de cometer error).\nVoy a contarte las primeras aproximaciones que dieron buenos resultados y que sirvieron de base para las siguientes, que omitiré aquí para no hacer el artículo demasiado extenso ni excesivamente técnico o matemático.\nImagino que lo primero que habrás hecho ha sido darle al play y comprobado el sorprendente nivel alcanzado. Es sorprendente y todo un logro para el aprendizaje por refuerzo. He conseguido que una IA aprenda estrategias efectivas por sí sola, sin recibir ningún tipo de consejo; como ves, planifica, es capaz de prever situaciones futuras sin conocer las próximas piezas, realiza combos y no se deja llevar por la recompensa inmediata.\nAsí que, si el video ya te dejó con curiosidad, te invito a seguir leyendo. ¡Vamos allá!\nPrimeros pasos El primer paso —que quizá des por hecho, pero vale la pena mencionar— consiste en implementar un entorno de juego que replique con precisión el comportamiento de una partida real en tetr.io, ya que ese será el escenario final donde quiero que juegue el agente.\nSin embargo, no entrenamos directamente en tetr.io. La razón principal es que nuestro entorno necesita estar totalmente optimizado en términos de tiempo, de modo que se puedan ejecutar partidas a la mayor velocidad posible.\nPara que te hagas una idea, el entorno que desarrollé es capaz de simular partidas cientos de veces más rápido que lo que podríamos lograr jugando directamente en tetr.io.\nModelado de la recompensa Como mencioné en la primera parte, uno de los principales desafíos del Reinforcement Learning aplicado a Tetris es el diseño de la función de recompensa. Las partidas pueden ser potencialmente infinitas, y para entrenar correctamente al agente es fundamental poder determinar qué partida ha sido mejor jugada que otra.\nUna primera idea sencilla para resolverlo sería limitar el número de piezas por partida, por ejemplo, a 100. De este modo, podríamos comparar el rendimiento de las partidas según su puntuación final, haciendo que el agente aprenda a maximizar su puntuación dentro de ese margen.\nAunque esta aproximación inicial es válida, presenta varios problemas:\nCrecimiento de la dificultad.\nEn Tetris, obtener puntuaciones más altas se vuelve exponencialmente más difícil a medida que avanza la partida. Sin embargo, este modelo lineal de recompensa no refleja esa complejidad, y queremos que el agente aprenda precisamente a reconocer y adaptarse a ese aumento de dificultad.\nValor temporal de las puntuaciones.\nPuede ocurrir que un agente consiga una cierta puntuación rápidamente y luego se estanque, mientras que otro alcance la misma puntuación, pero solo al final de la partida. Si ambos obtienen la misma recompensa final, el sistema considerará que han rendido igual, cuando en realidad el primero ha demostrado una estrategia más eficiente en algunos puntos. Por tanto, debemos diseñar la recompensa de forma que premie los picos de puntuación o las puntuaciones altas tempranas.\nEstado final de la partida.\nOtro caso común es que dos partidas terminen con la misma puntuación, pero una de ellas lo haga al borde del colapso, mientras que la otra mantenga el tablero en una situación estable. En ese caso, el modelo básico consideraría que ambas son igual de buenas, cuando la segunda claramente refleja una gestión más sólida. Una forma sencilla de abordar esto es variar el número de piezas por partida: un agente que termina “al borde de la muerte” tras 100 piezas obtendría una puntuación peor cuando se le exija colocar 150, penalizando indirectamente las estrategias inestables.\nIncentivar la curiosidad Cuando una persona se enfrenta a una situación completamente nueva —por ejemplo, un juego que nunca ha probado—, lo primero que hace es experimentar: prueba diferentes acciones, observa los resultados y aprende de ellos. Este proceso de ensayo y error es esencial para entender cómo funciona el entorno.\nNuestro agente debe hacer exactamente lo mismo. No basta con que repita las acciones que le dieron buenos resultados en el pasado; eso lo llevaría rápidamente a un aprendizaje limitado o sesgado. En su lugar, debe mantener una curiosidad activa, explorando también aquellas acciones cuyo efecto desconoce.\nPara conseguir esto, implementé un mecanismo de curiosidad artificial mediante una segunda red neuronal auxiliar, que se ejecuta en paralelo al agente principal. Esta red tiene un objetivo muy concreto: predecir lo que va a ocurrir en el juego cuando el agente realiza una determinada acción.\nPor ejemplo, si el agente decide colocar una pieza en una posición poco habitual, la red neuronal intenta anticipar el resultado: cómo quedará el tablero, cuántas líneas se eliminarán, si se generarán huecos, etc.\nDespués de que la acción se ejecute realmente, comparamos la predicción de la red con el resultado real.\nSi la predicción ha sido muy precisa, significa que esa acción ya es bien conocida por el agente, y por tanto no se necesita incentivar más su exploración. Pero si la predicción falla o difiere mucho de lo ocurrido en la práctica, interpretamos que el agente ha descubierto una situación nueva o poco explorada. En ese caso, se le otorga una recompensa adicional, para motivarlo a seguir investigando ese tipo de acciones. Este mecanismo actúa, en esencia, como una fuente de motivación interna: el agente siente “curiosidad” cuando algo le sorprende, y se siente atraído a seguir probando hasta que logra comprenderlo. Una vez domina esa situación, la curiosidad desaparece y su comportamiento vuelve a centrarse en maximizar la recompensa externa (la puntuación del juego).\nSin embargo, hay un aspecto crucial que conviene destacar.\nSi la red de predicción mejora demasiado y llega a anticipar con precisión todo lo que puede suceder, el agente deja de experimentar sorpresa ante el entorno. En términos prácticos, esto significa que pierde la curiosidad, ya que todas las acciones le resultan previsibles. Como consecuencia, su capacidad para seguir descubriendo estrategias nuevas o más efectivas se reduce drásticamente.\nPara evitar este estancamiento, es necesario introducir cierto “olvido controlado” en la red que genera la curiosidad. Dicho de otro modo, hacemos que la red pierda parte de su conocimiento de vez en cuando, o degradamos ligeramente su capacidad de predicción con el tiempo. Esto puede parecer contraproducente —¿por qué querríamos que una red “olvide”?—, pero tiene un propósito muy importante: reactivar la curiosidad del agente hacia situaciones que ya había explorado antes.\nImagina lo siguiente: al inicio del entrenamiento, el agente todavía no es muy hábil. Cuando se enfrenta a una determinada configuración del tablero y experimenta con una acción nueva, puede que la explore y satisfaga su curiosidad en ese momento, pero sin aprovechar realmente todo su potencial estratégico, porque aún no tiene las habilidades suficientes para hacerlo.\nCon el tiempo, el agente mejora, desarrolla estrategias más avanzadas y aprende a interpretar el entorno de manera más sofisticada. En ese punto, esas mismas situaciones que antes ya conocía pueden tener nuevas posibilidades que antes no era capaz de reconocer.\nSi la red de curiosidad conserva intacto su conocimiento anterior, no volverá a considerar esas situaciones como “interesantes”, y el agente nunca regresará a ellas para redescubrirlas con su nueva perspectiva. Por eso es importante que la red “olvide” parcialmente lo aprendido: al hacerlo, vuelve a generar curiosidad ante esos patrones antiguos, permitiendo que el agente los reexplore con un nivel de competencia superior.\nAgentes en jerarquía En muchos videojuegos, las habilidades de un jugador pueden analizarse en dos niveles complementarios: el macrogame y el microgame.\nEl macrogame hace referencia a la dimensión estratégica del juego: la capacidad de planificar, anticiparse a los eventos y tomar decisiones que determinen el rumbo general de la partida. Es la parte que responde al “qué hacer” y “por qué hacerlo”.\nPor su parte, el microgame describe la dimensión técnica o de ejecución: la precisión, la rapidez y la coordinación necesarias para llevar a cabo de forma efectiva las decisiones estratégicas previamente tomadas. Es la parte que responde al “cómo hacerlo”.\nSi trasladamos estos conceptos al contexto de Tetris, el macrogame corresponde a la planificación global: decidir dónde colocar cada pieza considerando el estado del tablero y, cuando es posible, anticipando las piezas futuras. En cambio, el microgame se refleja en la ejecución exacta de esa decisión: la rapidez con la que se rota la pieza, la secuencia de teclas necesarias y la precisión con que finalmente se coloca en su posición ideal.\nAmbos niveles son complementarios: el jugador más competente es aquel que logra combinar una visión estratégica sólida con una ejecución precisa y eficiente. Sin embargo, son dos habilidades muy diferentes entre sí, tanto en la forma en que se adquieren como en los procesos cognitivos que las sustentan.\nCon esta distinción en mente, opté por diseñar dos agentes de inteligencia artificial jerarquizados, cada uno especializado en uno de los niveles:\nEl agente estratega (macro): encargado de decidir dónde debe colocarse la siguiente pieza en función del estado del tablero. El agente ejecutor (micro): responsable de traducir esa decisión en acciones concretas, es decir, calcular qué teclas debe presionar y en qué orden para que la pieza llegue a la posición deseada. Esta estructura jerárquica presenta múltiples ventajas:\nEntrenamiento más eficiente.\nCada agente se entrena para cumplir una tarea muy específica, lo que simplifica el proceso de aprendizaje y acelera la convergencia.\nSeparación de errores.\nAl dividir las responsabilidades, no castigamos una habilidad por los fallos de la otra. Por ejemplo, si el agente estratega toma la mejor decisión posible pero el ejecutor comete un error al colocar la pieza, no penalizamos al estratega por un fallo que no le corresponde. Esto evita confundir la retroalimentación y permite que cada agente aprenda de forma más estable.\nDiferentes Arquitecturas neuronales.\nUna de las principales ventajas de dividir el sistema en dos agentes jerarquizados es que podemos diseñar arquitecturas de red neuronal especializadas para cada tipo de tarea. Aunque ambos agentes trabajan con información espacial —por lo que es natural utilizar redes convolucionales (CNNs) para procesar el estado del tablero—, los objetivos y dinámicas de aprendizaje son tan distintos que no tiene sentido utilizar la misma arquitectura ni los mismos hiperparámetros en ambos casos.\nEl agente estratega, encargado del macrogame, necesita una red con mayor profundidad y capacidad de abstracción, capaz de identificar patrones globales y relaciones de largo alcance dentro del tablero. En su caso, conviene incorporar capas de atención o bloques residuales que faciliten la propagación del gradiente y la comprensión de dependencias espaciales complejas. Además, suele beneficiarse de técnicas de regularización moderadas, como dropout o weight decay suaves, para evitar el sobreajuste pero sin limitar su capacidad de exploración. En cuanto a los hiperparámetros, un tamaño de lote mayor (batch size) y tasas de aprendizaje más pequeñas suelen ayudar a estabilizar el proceso, ya que su entrenamiento es más sensible a variaciones pequeñas en la recompensa.\nPor otro lado, el agente ejecutor, centrado en el microgame, requiere una arquitectura más ligera y reactiva, optimizada para la rapidez y la precisión en la toma de decisiones. En este caso, se priorizan redes más superficiales, con menos capas convolucionales pero más densamente conectadas, lo que permite respuestas inmediatas ante cambios del entorno. Es habitual aplicar reguladores más estrictos, como batch normalization y dropout más agresivos, para forzar la generalización y evitar que memorice secuencias de movimientos concretas. En cuanto a los hiperparámetros, convienen tasas de aprendizaje más altas y entrenamientos con actualizaciones frecuentes, favoreciendo una adaptación ágil a los patrones del juego.\nAumentación de datos resuelta mediante atención Como mencioné en la primera parte, una forma eficaz de ayudar al agente a reconocer patrones de juego consiste en exponerlo a situaciones diferentes que comparten la misma solución estratégica. En Tetris, por ejemplo, dos tableros que parecen distintos pueden requerir exactamente la misma jugada si su estructura es simétrica o equivalente en su parte superior.\nUna forma sencilla de lograr esto es mediante transformaciones del entorno, como aplicar simetrías horizontales tanto al tablero como a las piezas. Esto duplica, por así decirlo, los ejemplos disponibles, ayudando al agente a generalizar sus estrategias. Sin embargo, descubrí que existía una alternativa aún más poderosa y eficiente: introducir un sistema de atención en el propio tablero.\nEste sistema de atención actúa como un filtro visual que limita la cantidad de información que el agente estratega puede procesar simultáneamente. Concretamente, el agente solo puede centrarse en cuatro líneas del tablero a la vez, que en la mayoría de los casos acaban siendo —por pura optimización del entrenamiento— las cuatro líneas superiores, donde se toman las decisiones más críticas.\nEsta restricción tiene un efecto muy interesante: el agente aprende a abstraer el contexto y a reconocer patrones equivalentes en diferentes alturas del tablero. Es decir, interioriza que la forma de resolver una situación no depende de su posición absoluta, sino de la configuración local de las piezas. En la práctica, esto funciona como una forma de aumentación de datos implícita, ya que el agente aprende que muchos escenarios son esencialmente el mismo problema trasladado verticalmente.\nGracias a este enfoque, el proceso de entrenamiento inicial se vuelve mucho más eficiente, porque el agente necesita ver menos ejemplos distintos para comprender principios generales de juego. Dicho de otro modo, aprende a “pensar por analogía”: una situación que antes consideraba única pasa a verse como una variación de algo que ya domina.\nSin embargo, este sistema de atención debe evolucionar junto con el agente. En las fases tempranas, limitar el foco a solo cuatro líneas facilita el aprendizaje al reducir la complejidad perceptiva. Pero a medida que el agente se vuelve más competente, esa restricción se convierte en una limitación. Para alcanzar un rendimiento de nivel profesional, el agente necesita ampliar progresivamente su campo de atención hasta abarcar la totalidad del tablero, integrando la información de las líneas inferiores para realizar una planificación completa.\nLuchando contra un entorno aleatorio Aprender en un entorno tan caótico como una partida de Tetris es, literalmente, un reto épico. Como mencionamos en la primera parte, la aleatoriedad de las piezas hace que nunca se repitan dos partidas idénticas en toda la historia del universo. Las combinaciones posibles de secuencias y configuraciones del tablero crecen de forma exponencial, alcanzando magnitudes que superan ampliamente las del Go o el Ajedrez.\nEste nivel de entropía plantea un problema fundamental para el aprendizaje por refuerzo: ¿cómo puede el agente aprender estrategias estables y generalizables si cada partida es esencialmente única? Evaluar el valor de una decisión concreta en un contexto tan cambiante requeriría un número astronómico de simulaciones, algo totalmente inviable.\nEsto se debe a que el valor real de una posición en Tetris no depende únicamente del estado actual del tablero, sino también de la enorme combinatoria de piezas que pueden aparecer a continuación. Cada posible secuencia futura altera drásticamente la validez de una jugada presente, haciendo que estimar su impacto sea un problema de profundidad temporal y combinatoria casi infinita.\nPara superar este obstáculo, desarrollé una estrategia diferente: en lugar de intentar batallar contra el azar, decidí domesticarlo. La idea fue crear un segundo agente, un “rival artificial”, cuyo papel no es competir directamente enviando las líneas al jugador —como ocurre en el Tetris multijugador—, sino intervenir en la distribución de las piezas.\nEl funcionamiento es el siguiente: este agente rival observa el tablero en cada momento y selecciona, de entre todas las piezas posibles, aquella que resulte más desfavorable para el jugador principal. Es decir, intenta ofrecerle las piezas que generen las situaciones más complicadas posibles. De este modo, transformamos un entorno originalmente aleatorio en uno determinista y adversarial, en el que cada configuración de tablero tiene su contrapartida más desafiante.\nAmbos agentes —el jugador y su rival— se entrenan de manera paralela y coevolutiva. A medida que el jugador aprende a resolver estructuras cada vez más difíciles, el rival también mejora, descubriendo nuevas formas de romper las estrategias del jugador. Este proceso genera una dinámica de retroalimentación constante.\nEl resultado es un entrenamiento adversarial progresivo, en el que ambos agentes se impulsan mutuamente hacia la mejora continua.\nEstamos creando así un jugador IA capaz de desenvolverse en los peores escenarios posibles.\nY finalmente cuando este agente se enfrenta a una partida real, a veces se encontrará con esas mismas situaciones difíciles que ya ha aprendido a manejar, por lo que sabrá cómo reaccionar y superarlas.\nY otras veces se topará con escenarios más favorables, en los que, gracias a su entrenamiento bajo presión, podrá desenvolverse con aún mayor facilidad.\nResultados Como puede verse en el video, al combinar todos los conceptos descritos anteriormente se ha logrado entrenar un agente de Tetris con un nivel claramente profesional.\nSi no estás familiarizado con las partidas de Tetris competitivo, su estilo de juego puede parecerte extraño: el objetivo tanto de los jugadores expertos como del agente en esta fase no es simplemente eliminar líneas, sino construir estructuras altas y específicas que permitan ejecutar rotaciones avanzadas (conocidas como T-Spins y otras variantes). Estas maniobras son más complejas, pero otorgan una puntuación muy superior a las eliminaciones de líneas convencionales.\nEn este punto ya puedo afirmar que se ha alcanzado un hito en el aprendizaje por refuerzo: el agente ha aprendido, sin supervisión ni ejemplos humanos, a jugar de manera estratégica y previsora en un entorno tan impredecible como Tetris. Este resultado demuestra la capacidad de la IA para descubrir por sí misma conceptos tácticos y patrones de planificación que tradicionalmente se atribuían al razonamiento humano.\nSin embargo, incluso con un nivel tan alto, el objetivo sigue siendo ir más allá. La estrategia de entrenamiento adversarial con el jugador rival ha demostrado ser muy eficaz, pero llega un momento en que la mejora se vuelve extremadamente lenta, ya sea por las limitaciones de hardware —en mi caso, una GPU NVIDIA 3090 de 24 GB— o por el enorme tiempo de entrenamiento necesario para seguir progresando.\nEn las siguientes partes de esta serie mostraré cómo evolucioné desde este punto, introduciendo nuevas técnicas y optimizaciones que permitieron alcanzar un nivel de juego prácticamente inalcanzable.\n",
+  "wordCount" : "3085",
+  "inLanguage": "es",
+  "image":"https://joan-projects.github.io/img/Tetris2.png","datePublished": "2025-11-05T00:00:00Z",
+  "dateModified": "2025-11-05T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Joan"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://joan-projects.github.io/posts/tetris2/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Joan — Projects —",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://joan-projects.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -113,7 +190,7 @@ Así que, si el video ya te dejó con curiosidad, te invito a seguir leyendo. ¡
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="Joan — Projects — (Alt + H)">Joan — Projects —</a>
+            <a href="https://joan-projects.github.io/" accesskey="h" title="Joan — Projects — (Alt + H)">Joan — Projects —</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -137,7 +214,7 @@ Así que, si el video ya te dejó con curiosidad, te invito a seguir leyendo. ¡
                 </button>
                     <ul class="lang-switch"><li>|</li>
                         <li>
-                            <a href="http://localhost:1313/en/" title="English"
+                            <a href="https://joan-projects.github.io/en/" title="English"
                                 aria-label="English">En</a>
                         </li>
                     </ul>
@@ -145,17 +222,17 @@ Así que, si el video ya te dejó con curiosidad, te invito a seguir leyendo. ¡
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/" title="Inicio">
+                <a href="https://joan-projects.github.io/" title="Inicio">
                     <span>Inicio</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/posts/" title="Artículos">
+                <a href="https://joan-projects.github.io/posts/" title="Artículos">
                     <span>Artículos</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/contacto/" title="Contacto">
+                <a href="https://joan-projects.github.io/contacto/" title="Contacto">
                     <span>Contacto</span>
                 </a>
             </li>
@@ -173,7 +250,7 @@ Así que, si el video ya te dejó con curiosidad, te invito a seguir leyendo. ¡
     <div class="post-meta"><span title='2025-11-05 00:00:00 +0000 UTC'>5 de noviembre de 2025</span>&nbsp;·&nbsp;<span>15 min</span>&nbsp;·&nbsp;<span>Joan</span>&nbsp;|&nbsp;<span>Traducciones:</span>
 <ul class="i18n_list">
     <li>
-        <a href="http://localhost:1313/en/posts/tetris2/">En</a>
+        <a href="https://joan-projects.github.io/en/posts/tetris2/">En</a>
     </li>
 </ul>
 
@@ -189,8 +266,8 @@ Así que, si el video ya te dejó con curiosidad, te invito a seguir leyendo. ¡
         class="vc-video"
         preload="metadata"
         playsinline
-        poster="http://localhost:1313/img/Tetris2.png"
-        style="width:100%;height:auto;display:block;border-radius:12px;object-fit:cover"><source src="http://localhost:1313/video/Tetris2.mp4" type="video/mp4">Tu navegador no soporta el elemento <code>video</code>.
+        poster="https://joan-projects.github.io/img/Tetris2.png"
+        style="width:100%;height:auto;display:block;border-radius:12px;object-fit:cover"><source src="https://joan-projects.github.io/video/Tetris2.mp4" type="video/mp4">Tu navegador no soporta el elemento <code>video</code>.
       </video>
 
       
@@ -374,12 +451,12 @@ En las siguientes partes de esta serie mostraré cómo evolucioné desde este pu
     <ul class="post-tags">
     </ul>
 <nav class="paginav">
-  <a class="prev" href="http://localhost:1313/posts/tetris-perfect-cleans/">
+  <a class="prev" href="https://joan-projects.github.io/posts/tetris-perfect-cleans/">
     <span class="title">« Anterior</span>
     <br>
     <span>Aprendizaje por refuerzo en Tetris – Parte 3</span>
   </a>
-  <a class="next" href="http://localhost:1313/posts/tetris1/">
+  <a class="next" href="https://joan-projects.github.io/posts/tetris1/">
     <span class="title">Siguiente »</span>
     <br>
     <span>Aprendizaje automático en Tetris – Parte 1</span>
@@ -390,7 +467,7 @@ En las siguientes partes de esta serie mostraré cómo evolucioné desde este pu
 <ul class="share-buttons">
     <li>
         <a target="_blank" rel="noopener noreferrer" aria-label="share Aprendizaje por refuerzo en Tetris – Parte 2 on x"
-            href="https://x.com/intent/tweet/?text=Aprendizaje%20por%20refuerzo%20en%20Tetris%20%e2%80%93%20Parte%202&amp;url=http%3a%2f%2flocalhost%3a1313%2fposts%2ftetris2%2f&amp;hashtags=">
+            href="https://x.com/intent/tweet/?text=Aprendizaje%20por%20refuerzo%20en%20Tetris%20%e2%80%93%20Parte%202&amp;url=https%3a%2f%2fjoan-projects.github.io%2fposts%2ftetris2%2f&amp;hashtags=">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
@@ -399,7 +476,7 @@ En las siguientes partes de esta serie mostraré cómo evolucioné desde este pu
     </li>
     <li>
         <a target="_blank" rel="noopener noreferrer" aria-label="share Aprendizaje por refuerzo en Tetris – Parte 2 on linkedin"
-            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fposts%2ftetris2%2f&amp;title=Aprendizaje%20por%20refuerzo%20en%20Tetris%20%e2%80%93%20Parte%202&amp;summary=Aprendizaje%20por%20refuerzo%20en%20Tetris%20%e2%80%93%20Parte%202&amp;source=http%3a%2f%2flocalhost%3a1313%2fposts%2ftetris2%2f">
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fjoan-projects.github.io%2fposts%2ftetris2%2f&amp;title=Aprendizaje%20por%20refuerzo%20en%20Tetris%20%e2%80%93%20Parte%202&amp;summary=Aprendizaje%20por%20refuerzo%20en%20Tetris%20%e2%80%93%20Parte%202&amp;source=https%3a%2f%2fjoan-projects.github.io%2fposts%2ftetris2%2f">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
@@ -408,7 +485,7 @@ En las siguientes partes de esta serie mostraré cómo evolucioné desde este pu
     </li>
     <li>
         <a target="_blank" rel="noopener noreferrer" aria-label="share Aprendizaje por refuerzo en Tetris – Parte 2 on reddit"
-            href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2ftetris2%2f&title=Aprendizaje%20por%20refuerzo%20en%20Tetris%20%e2%80%93%20Parte%202">
+            href="https://reddit.com/submit?url=https%3a%2f%2fjoan-projects.github.io%2fposts%2ftetris2%2f&title=Aprendizaje%20por%20refuerzo%20en%20Tetris%20%e2%80%93%20Parte%202">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
@@ -417,7 +494,7 @@ En las siguientes partes de esta serie mostraré cómo evolucioné desde este pu
     </li>
     <li>
         <a target="_blank" rel="noopener noreferrer" aria-label="share Aprendizaje por refuerzo en Tetris – Parte 2 on facebook"
-            href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fposts%2ftetris2%2f">
+            href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fjoan-projects.github.io%2fposts%2ftetris2%2f">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
@@ -426,7 +503,7 @@ En las siguientes partes de esta serie mostraré cómo evolucioné desde este pu
     </li>
     <li>
         <a target="_blank" rel="noopener noreferrer" aria-label="share Aprendizaje por refuerzo en Tetris – Parte 2 on whatsapp"
-            href="https://api.whatsapp.com/send?text=Aprendizaje%20por%20refuerzo%20en%20Tetris%20%e2%80%93%20Parte%202%20-%20http%3a%2f%2flocalhost%3a1313%2fposts%2ftetris2%2f">
+            href="https://api.whatsapp.com/send?text=Aprendizaje%20por%20refuerzo%20en%20Tetris%20%e2%80%93%20Parte%202%20-%20https%3a%2f%2fjoan-projects.github.io%2fposts%2ftetris2%2f">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
@@ -435,7 +512,7 @@ En las siguientes partes de esta serie mostraré cómo evolucioné desde este pu
     </li>
     <li>
         <a target="_blank" rel="noopener noreferrer" aria-label="share Aprendizaje por refuerzo en Tetris – Parte 2 on telegram"
-            href="https://telegram.me/share/url?text=Aprendizaje%20por%20refuerzo%20en%20Tetris%20%e2%80%93%20Parte%202&amp;url=http%3a%2f%2flocalhost%3a1313%2fposts%2ftetris2%2f">
+            href="https://telegram.me/share/url?text=Aprendizaje%20por%20refuerzo%20en%20Tetris%20%e2%80%93%20Parte%202&amp;url=https%3a%2f%2fjoan-projects.github.io%2fposts%2ftetris2%2f">
             <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
@@ -444,7 +521,7 @@ En las siguientes partes de esta serie mostraré cómo evolucioné desde este pu
     </li>
     <li>
         <a target="_blank" rel="noopener noreferrer" aria-label="share Aprendizaje por refuerzo en Tetris – Parte 2 on ycombinator"
-            href="https://news.ycombinator.com/submitlink?t=Aprendizaje%20por%20refuerzo%20en%20Tetris%20%e2%80%93%20Parte%202&u=http%3a%2f%2flocalhost%3a1313%2fposts%2ftetris2%2f">
+            href="https://news.ycombinator.com/submitlink?t=Aprendizaje%20por%20refuerzo%20en%20Tetris%20%e2%80%93%20Parte%202&u=https%3a%2f%2fjoan-projects.github.io%2fposts%2ftetris2%2f">
             <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
                 xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
                 <path
@@ -459,7 +536,7 @@ En las siguientes partes de esta serie mostraré cómo evolucioné desde este pu
     </main>
     
 <footer class="footer">
-        <span>&copy; 2026 <a href="http://localhost:1313/">Joan — Projects —</a></span> · 
+        <span>&copy; 2026 <a href="https://joan-projects.github.io/">Joan — Projects —</a></span> · 
 
     <span>
         Powered by

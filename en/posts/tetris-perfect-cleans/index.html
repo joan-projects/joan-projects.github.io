@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Reinforcement Learning in Tetris – Part 3 | Joan Projects</title>
 <meta name="keywords" content="">
 <meta name="description" content="Introduction
 After sharing the previous demonstration video, several readers made a very reasonable observation: if you are not a regular Tetris player, it is difficult to truly appreciate the mastery of the AI. Many of the brilliant decisions it makes go unnoticed simply because the viewer is not familiar with the scoring system or with the game’s competitive dynamics.
 This led me to rethink the project’s approach. Before showcasing an AI designed to defeat human players by sending large amounts of garbage lines, I wanted to build an intermediate step: an AI that not only plays well, but is immediately impressive to watch, even for someone who has never played a competitive game of Tetris.">
 <meta name="author" content="Joan">
-<link rel="canonical" href="http://localhost:1313/en/posts/tetris-perfect-cleans/">
+<link rel="canonical" href="https://joan-projects.github.io/en/posts/tetris-perfect-cleans/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="https://joan-projects.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://joan-projects.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://joan-projects.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://joan-projects.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://joan-projects.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="es" href="http://localhost:1313/posts/tetris-perfect-cleans/">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/en/posts/tetris-perfect-cleans/">
+<link rel="alternate" hreflang="es" href="https://joan-projects.github.io/posts/tetris-perfect-cleans/">
+<link rel="alternate" hreflang="en" href="https://joan-projects.github.io/en/posts/tetris-perfect-cleans/">
 <noscript>
     <style>
         #theme-toggle,
@@ -92,7 +92,78 @@ This led me to rethink the project’s approach. Before showcasing an AI designe
 .list .post-entry .entry-header { order: 0; }
 .list .post-entry .entry-cover  { order: 1; margin-top: .5rem; }
 </style>
+<meta property="og:url" content="https://joan-projects.github.io/en/posts/tetris-perfect-cleans/">
+  <meta property="og:site_name" content="Joan Projects">
+  <meta property="og:title" content="Reinforcement Learning in Tetris – Part 3">
+  <meta property="og:description" content="Introduction After sharing the previous demonstration video, several readers made a very reasonable observation: if you are not a regular Tetris player, it is difficult to truly appreciate the mastery of the AI. Many of the brilliant decisions it makes go unnoticed simply because the viewer is not familiar with the scoring system or with the game’s competitive dynamics.
+This led me to rethink the project’s approach. Before showcasing an AI designed to defeat human players by sending large amounts of garbage lines, I wanted to build an intermediate step: an AI that not only plays well, but is immediately impressive to watch, even for someone who has never played a competitive game of Tetris.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-01-06T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-01-06T00:00:00+00:00">
+    <meta property="og:image" content="https://joan-projects.github.io/img/TetrisPC.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://joan-projects.github.io/img/TetrisPC.png">
+<meta name="twitter:title" content="Reinforcement Learning in Tetris – Part 3">
+<meta name="twitter:description" content="Introduction
+After sharing the previous demonstration video, several readers made a very reasonable observation: if you are not a regular Tetris player, it is difficult to truly appreciate the mastery of the AI. Many of the brilliant decisions it makes go unnoticed simply because the viewer is not familiar with the scoring system or with the game’s competitive dynamics.
+This led me to rethink the project’s approach. Before showcasing an AI designed to defeat human players by sending large amounts of garbage lines, I wanted to build an intermediate step: an AI that not only plays well, but is immediately impressive to watch, even for someone who has never played a competitive game of Tetris.">
 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://joan-projects.github.io/en/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Reinforcement Learning in Tetris – Part 3",
+      "item": "https://joan-projects.github.io/en/posts/tetris-perfect-cleans/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Reinforcement Learning in Tetris – Part 3",
+  "name": "Reinforcement Learning in Tetris – Part 3",
+  "description": "Introduction After sharing the previous demonstration video, several readers made a very reasonable observation: if you are not a regular Tetris player, it is difficult to truly appreciate the mastery of the AI. Many of the brilliant decisions it makes go unnoticed simply because the viewer is not familiar with the scoring system or with the game’s competitive dynamics.\nThis led me to rethink the project’s approach. Before showcasing an AI designed to defeat human players by sending large amounts of garbage lines, I wanted to build an intermediate step: an AI that not only plays well, but is immediately impressive to watch, even for someone who has never played a competitive game of Tetris.\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "Introduction After sharing the previous demonstration video, several readers made a very reasonable observation: if you are not a regular Tetris player, it is difficult to truly appreciate the mastery of the AI. Many of the brilliant decisions it makes go unnoticed simply because the viewer is not familiar with the scoring system or with the game’s competitive dynamics.\nThis led me to rethink the project’s approach. Before showcasing an AI designed to defeat human players by sending large amounts of garbage lines, I wanted to build an intermediate step: an AI that not only plays well, but is immediately impressive to watch, even for someone who has never played a competitive game of Tetris.\nSome context The most spectacular move in Tetris, without a doubt, is achieving a perfect clean: clearing all blocks from the board and leaving it completely empty.\nAlthough the goal is simple to describe, achieving it is anything but trivial. The player must solve a puzzle in a matter of seconds and, moreover, do so with incomplete information, since more pieces are usually required than can be seen in advance.\nIn Tetr.io, this move is especially well rewarded: performing a perfect clean sends five additional lines to the opponent, the largest bonus that can be obtained in a single move.\nPrecisely because it is a puzzle with incomplete information, professional players do not improvise. Instead, they memorize guides of opening moves—known as openers—that maximize the probability of success given the available pieces.\nFor example, if it is possible to keep the I piece in hold (a condition that is not always met, but can be inferred by observing the piece bag), the Perfect Clean Opener (PCO) offers a success probability of 84.64%. If that piece is not available in hold, the probability drops to 61.19%.\nSimilarly, if it is expected that a T piece can be kept in hold, there is the option of using the Grace System opener, which raises the success probability to 88.75%. There are many more techniques that could be listed, each with its own success rate, but these examples are sufficient to convey the nature of the problem.\nThe conclusion that should be clear to the reader is the following: with memorization and skill, a professional player can reach very high probabilities of achieving a perfect clean, but never a 100% guarantee.\nAll of these techniques share a fundamental characteristic: when executed correctly, they allow a perfect clean to be achieved using exactly 10 pieces.\nThere is, however, an additional difficulty, especially when the goal is to chain as many perfect cleans as possible. If a player attempts one of these openers and ends up in a case where it cannot be completed, they are left in an intermediate position. From there, creativity comes into play: the player must try to recover so that, after a few more pieces, they can attempt another opener.\nAfter conducting this preliminary research, it is possible to properly size the problem faced by the AI agent. Once again, the main obstacle is incomplete information: given the same observation, taking exactly the same action, the agent may achieve a perfect clean—or may fail—depending on which pieces appear next.\nA new value function First of all, I could no longer rely on the traditional game score (lines sent) as the value function, since the objective had changed: it was now about achieving the maximum number of perfect cleans using the smallest possible number of pieces. Without resorting to an excessively instrumental ad hoc function, the idea was for the agent to discover on its own the best strategy to achieve that goal.\nTo this end, I modified the value function as follows:\nthe agent receives +1 point when it achieves a perfect clean it receives −1 point if the maximum board height exceeds 5 rows In this way, the agent has clear incentives to keep the board low.\nIn matches oriented toward sending lines, accumulating height can be interesting, since at certain moments clearing consecutive lines generates additional bonuses. In this case, however, the objective is very different: we want to maximize the chances of achieving a perfect clean, and accumulating height moves us away from that goal.\nIn addition, I removed the discount factor during the first five placed pieces. In that horizon, future actions are completely deterministic with respect to the environment, since the agent knows in advance all the pieces that will appear in that segment. As long as the order of visible pieces is fixed, there is no randomness in their appearance and, therefore, no uncertainty associated with the environment during those initial actions.\nThe discount factor serves multiple purposes in reinforcement learning. Among other things, it reflects uncertainty linked to future consequences, introduces a preference for obtaining rewards sooner rather than later, and can help stabilize learning over long horizons. However, in this specific problem, those effects are not relevant during the first five pieces.\nOn the one hand, there is no uncertainty: the environment is completely predictable in that segment. On the other hand, the number of pieces required to reach a perfect clean is not a variable that the agent can freely “optimize” within that window. To completely clear the board, an integer number of rows (width 10) must necessarily be completed, which corresponds to occupying a multiple of 10 cells (10×1, 10×2, 10×3, 10×4, etc.).\nIn practice, the most common case is 10×4 (40 blocks), which corresponds to 10 pieces, since each tetromino occupies 4 blocks. Other cases exist, but they are much less frequent and do not change the main idea: the reward cannot be obtained before placing that number of pieces, which is essentially fixed by the very definition of a perfect clean.\nFor these reasons, the discount factor only begins to be applied starting from the sixth piece, when the environment ceases to be deterministic and uncertainty associated with subsequent pieces appears, using a value of 0.95 at that point.\nCollecting perfect cleans As mentioned earlier, environmental uncertainty is the main factor that complicates the agent’s learning process. The same combination of actions may be effective in some cases and fail in others, simply depending on which pieces appear in the sixth, seventh, eighth, ninth, or tenth position.\nTo facilitate learning, each time the agent achieved a new perfect clean, that state was stored. During training, the environment was frequently initialized at one of these moments prior to success: between 10 actions before (depending on the number of holds used) and 5 actions before the perfect clean.\nThis approach made it possible to observe that, as training progressed, the agent discovered multiple different action sequences capable of solving the same initial configuration. Since the agent’s policy is parameterized by a neural network whose output is a probability distribution over possible actions, each of these strategies implicitly competed in terms of expected return.\nBy repeatedly exposing the agent to the same states under uncertainty induced by future pieces, learning updates tended to increase the probability assigned to those actions that, on average, led more frequently to a perfect clean. As a result, without imposing explicit rules or selecting specific trajectories, the learned policy progressively evolved toward a statistically dominant strategy, that is, one that is more robust to environmental variability.\nPutting it all together By combining the techniques described in the previous sections with those presented here, the expected results were obtained. The agent is capable of chaining perfect cleans at a superhuman level.\nAs a reference, the most perfect human game ever recorded achieves, on average, one perfect clean every 11.08 pieces. My agent, for its part, achieves one approximately every 11.5 pieces.\nIt is true that the agent requires slightly more pieces than that exceptional human game, but the comparison is key: this is not the agent’s best possible game, but any game played by the agent, compared against the best game ever performed by a human.\nThe hardest challenge yet There is an action even more spectacular than the standard perfect clean: the perfect clean finished with a Tetris. In addition to being visually impressive, it is the move that sends the most lines to the opponent, as it combines the 5 lines from the perfect clean with the 4 lines from the Tetris.\nIn this case, the puzzle becomes truly complex. In practice, it is like performing two consecutive perfect cleans: the first with an effective width of 9 columns, and the second using the I piece placed vertically. To achieve this, it is no longer sufficient to have complete control of the board, as in the previous case; it is also necessary to precisely control the order in which pieces are used, something that was not previously required.\nDespite the considerable increase in difficulty, the only change made was to the value function, which in this case provides a reward only when a perfect clean finished with a Tetris is achieved.\nThe trained agent plays with the objective of chaining as many perfect cleans finished with a Tetris as possible within a single game. In this context, the observed result is that the agent achieves this type of move with a frequency of less than one every 40 pieces; that is, in continuous play it achieves, on average, one perfect clean + Tetris every fewer than 40 placed pieces.\nDuring training, a clear and sustained trend was also observed: as the agent learned, the number of pieces required between one perfect clean + Tetris and the next progressively decreased, without showing signs of stagnation. The process was halted solely due to practical limitations of time and computation, since with a single RTX 3090 the rate of improvement in this final phase is relatively slow.\nIt would be interesting to see how far this approach can go, and I do not rule out resuming this training in the future to find out.\nVideo of the agent trained to perform perfect cleans finished with Tetris\n",
+  "wordCount" : "1662",
+  "inLanguage": "en",
+  "image":"https://joan-projects.github.io/img/TetrisPC.png","datePublished": "2026-01-06T00:00:00Z",
+  "dateModified": "2026-01-06T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Joan"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://joan-projects.github.io/en/posts/tetris-perfect-cleans/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Joan Projects",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://joan-projects.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -110,7 +181,7 @@ This led me to rethink the project’s approach. Before showcasing an AI designe
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/en/" accesskey="h" title="Joan Projects (Alt + H)">Joan Projects</a>
+            <a href="https://joan-projects.github.io/en/" accesskey="h" title="Joan Projects (Alt + H)">Joan Projects</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -134,7 +205,7 @@ This led me to rethink the project’s approach. Before showcasing an AI designe
                 </button>
                     <ul class="lang-switch"><li>|</li>
                         <li>
-                            <a href="http://localhost:1313/" title="Español"
+                            <a href="https://joan-projects.github.io/" title="Español"
                                 aria-label="Español">Es</a>
                         </li>
                     </ul>
@@ -142,17 +213,17 @@ This led me to rethink the project’s approach. Before showcasing an AI designe
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/en/" title="Home">
+                <a href="https://joan-projects.github.io/en/" title="Home">
                     <span>Home</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/en/posts/" title="Posts">
+                <a href="https://joan-projects.github.io/en/posts/" title="Posts">
                     <span>Posts</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/en/contact/" title="Contact">
+                <a href="https://joan-projects.github.io/en/contact/" title="Contact">
                     <span>Contact</span>
                 </a>
             </li>
@@ -170,7 +241,7 @@ This led me to rethink the project’s approach. Before showcasing an AI designe
     <div class="post-meta"><span title='2026-01-06 00:00:00 +0000 UTC'>January 6, 2026</span>&nbsp;·&nbsp;<span>8 min</span>&nbsp;·&nbsp;<span>Joan</span>&nbsp;|&nbsp;<span>Translations:</span>
 <ul class="i18n_list">
     <li>
-        <a href="http://localhost:1313/posts/tetris-perfect-cleans/">Es</a>
+        <a href="https://joan-projects.github.io/posts/tetris-perfect-cleans/">Es</a>
     </li>
 </ul>
 
@@ -186,8 +257,8 @@ This led me to rethink the project’s approach. Before showcasing an AI designe
         class="vc-video"
         preload="metadata"
         playsinline
-        poster="http://localhost:1313/img/TetrisPC.png"
-        style="width:100%;height:auto;display:block;border-radius:12px;object-fit:cover"><source src="http://localhost:1313/video/PC.mp4" type="video/mp4">Tu navegador no soporta el elemento <code>video</code>.
+        poster="https://joan-projects.github.io/img/TetrisPC.png"
+        style="width:100%;height:auto;display:block;border-radius:12px;object-fit:cover"><source src="https://joan-projects.github.io/video/PC.mp4" type="video/mp4">Tu navegador no soporta el elemento <code>video</code>.
       </video>
 
       
@@ -317,7 +388,7 @@ This led me to rethink the project’s approach. Before showcasing an AI designe
     <ul class="post-tags">
     </ul>
 <nav class="paginav">
-  <a class="next" href="http://localhost:1313/en/posts/tetris2/">
+  <a class="next" href="https://joan-projects.github.io/en/posts/tetris2/">
     <span class="title">Next »</span>
     <br>
     <span>Reinforcement Learning in Tetris – Part 2</span>
@@ -328,7 +399,7 @@ This led me to rethink the project’s approach. Before showcasing an AI designe
 <ul class="share-buttons">
     <li>
         <a target="_blank" rel="noopener noreferrer" aria-label="share Reinforcement Learning in Tetris – Part 3 on x"
-            href="https://x.com/intent/tweet/?text=Reinforcement%20Learning%20in%20Tetris%20%e2%80%93%20Part%203&amp;url=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2ftetris-perfect-cleans%2f&amp;hashtags=">
+            href="https://x.com/intent/tweet/?text=Reinforcement%20Learning%20in%20Tetris%20%e2%80%93%20Part%203&amp;url=https%3a%2f%2fjoan-projects.github.io%2fen%2fposts%2ftetris-perfect-cleans%2f&amp;hashtags=">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
@@ -337,7 +408,7 @@ This led me to rethink the project’s approach. Before showcasing an AI designe
     </li>
     <li>
         <a target="_blank" rel="noopener noreferrer" aria-label="share Reinforcement Learning in Tetris – Part 3 on linkedin"
-            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2ftetris-perfect-cleans%2f&amp;title=Reinforcement%20Learning%20in%20Tetris%20%e2%80%93%20Part%203&amp;summary=Reinforcement%20Learning%20in%20Tetris%20%e2%80%93%20Part%203&amp;source=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2ftetris-perfect-cleans%2f">
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fjoan-projects.github.io%2fen%2fposts%2ftetris-perfect-cleans%2f&amp;title=Reinforcement%20Learning%20in%20Tetris%20%e2%80%93%20Part%203&amp;summary=Reinforcement%20Learning%20in%20Tetris%20%e2%80%93%20Part%203&amp;source=https%3a%2f%2fjoan-projects.github.io%2fen%2fposts%2ftetris-perfect-cleans%2f">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
@@ -346,7 +417,7 @@ This led me to rethink the project’s approach. Before showcasing an AI designe
     </li>
     <li>
         <a target="_blank" rel="noopener noreferrer" aria-label="share Reinforcement Learning in Tetris – Part 3 on reddit"
-            href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2ftetris-perfect-cleans%2f&title=Reinforcement%20Learning%20in%20Tetris%20%e2%80%93%20Part%203">
+            href="https://reddit.com/submit?url=https%3a%2f%2fjoan-projects.github.io%2fen%2fposts%2ftetris-perfect-cleans%2f&title=Reinforcement%20Learning%20in%20Tetris%20%e2%80%93%20Part%203">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
@@ -355,7 +426,7 @@ This led me to rethink the project’s approach. Before showcasing an AI designe
     </li>
     <li>
         <a target="_blank" rel="noopener noreferrer" aria-label="share Reinforcement Learning in Tetris – Part 3 on facebook"
-            href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2ftetris-perfect-cleans%2f">
+            href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fjoan-projects.github.io%2fen%2fposts%2ftetris-perfect-cleans%2f">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
@@ -364,7 +435,7 @@ This led me to rethink the project’s approach. Before showcasing an AI designe
     </li>
     <li>
         <a target="_blank" rel="noopener noreferrer" aria-label="share Reinforcement Learning in Tetris – Part 3 on whatsapp"
-            href="https://api.whatsapp.com/send?text=Reinforcement%20Learning%20in%20Tetris%20%e2%80%93%20Part%203%20-%20http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2ftetris-perfect-cleans%2f">
+            href="https://api.whatsapp.com/send?text=Reinforcement%20Learning%20in%20Tetris%20%e2%80%93%20Part%203%20-%20https%3a%2f%2fjoan-projects.github.io%2fen%2fposts%2ftetris-perfect-cleans%2f">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
@@ -373,7 +444,7 @@ This led me to rethink the project’s approach. Before showcasing an AI designe
     </li>
     <li>
         <a target="_blank" rel="noopener noreferrer" aria-label="share Reinforcement Learning in Tetris – Part 3 on telegram"
-            href="https://telegram.me/share/url?text=Reinforcement%20Learning%20in%20Tetris%20%e2%80%93%20Part%203&amp;url=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2ftetris-perfect-cleans%2f">
+            href="https://telegram.me/share/url?text=Reinforcement%20Learning%20in%20Tetris%20%e2%80%93%20Part%203&amp;url=https%3a%2f%2fjoan-projects.github.io%2fen%2fposts%2ftetris-perfect-cleans%2f">
             <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
@@ -382,7 +453,7 @@ This led me to rethink the project’s approach. Before showcasing an AI designe
     </li>
     <li>
         <a target="_blank" rel="noopener noreferrer" aria-label="share Reinforcement Learning in Tetris – Part 3 on ycombinator"
-            href="https://news.ycombinator.com/submitlink?t=Reinforcement%20Learning%20in%20Tetris%20%e2%80%93%20Part%203&u=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2ftetris-perfect-cleans%2f">
+            href="https://news.ycombinator.com/submitlink?t=Reinforcement%20Learning%20in%20Tetris%20%e2%80%93%20Part%203&u=https%3a%2f%2fjoan-projects.github.io%2fen%2fposts%2ftetris-perfect-cleans%2f">
             <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
                 xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
                 <path
@@ -397,7 +468,7 @@ This led me to rethink the project’s approach. Before showcasing an AI designe
     </main>
     
 <footer class="footer">
-        <span>&copy; 2026 <a href="http://localhost:1313/en/">Joan Projects</a></span> · 
+        <span>&copy; 2026 <a href="https://joan-projects.github.io/en/">Joan Projects</a></span> · 
 
     <span>
         Powered by
